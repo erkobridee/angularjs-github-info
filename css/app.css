@@ -1,0 +1,188 @@
+/*
+  Based on:
+  https://github.com/daha/angularJS-github-contributors/blob/master/app/lib/yui3/yui3-app-contributors.css
+*/
+/* --------------------------------------------------- */
+
+#github-app .avatar,
+#github-app .avatar img {
+  display: block;
+  width: 76px;
+  height: 76px;
+  border: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+#github-app .avatar {
+  display: inline-block;
+  *display: inline; zoom: 1;
+  height: 76px;
+  padding: 2px;
+}
+#github-app .avatar:hover,
+#github-app .user-avatar {
+  -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 0 2px rgba(0,0,0,0.25);
+  box-shadow: 0 0 2px rgba(0,0,0,0.25);
+}
+
+/* --------------------------------------------------- */
+
+#github-app .user-login div {
+  float: left;
+  padding: 10px;
+  vertical-align: middle;
+  display: table-cell;
+}
+#github-app .user-info ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+#github-app .user-info li {
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 10px;
+}
+#github-app .repo {
+  margin: 1px 0;
+  padding: 0 6px;
+  color: #333;
+  background: #F9F9FC;
+  border-bottom: 1px solid #E5E6F1;
+}
+#github-app .repo:hover {
+    background: #F1F1F4;
+}
+#github-app .repo-name h3 {
+  margin: 6px 0 0 0;
+  cursor: pointer;
+  vertical-align: middle;
+  display: table-cell;
+}
+#github-app .repo-name ul {
+  list-style: none;
+  padding-left: 0;
+  height: 47px;
+  line-height: 47px;
+}
+#github-app .repo-name div,
+#github-app .repo-name li {
+  float: left;
+  vertical-align: middle;
+  display: table-cell;
+  width: 65%;
+}
+#github-app .repo-stats {
+  margin-top: 6px;
+}
+#github-app .repo-stats ul {
+  list-style: none;
+  padding-left: 0;
+  height: 47px;
+  line-height: 47px;
+}
+#github-app .repo-stats div,
+#github-app .repo-stats li {
+  padding: 10px;
+  float: left;
+  vertical-align: middle;
+  display: table-cell;
+}
+#github-app .repo-stats b {
+  display: block;
+}
+#github-app .repo-stats span {
+  display: block;
+  font-size: 11px;
+  color: #767676;
+}
+#github-app .repo-stats .repo-lang {
+  text-align: center;
+  line-height: 11px;
+  margin-top: 15px;
+}
+#github-app .repo-stats .repo-watchers,
+#github-app .repo-stats .repo-forks {
+  width: 50px;
+  text-align: center;
+  line-height: 11px;
+  margin-top: 15px;
+}
+
+#github-app .repo-desc {
+  margin: 10px 20px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #767676;
+  width: auto;
+}
+#github-app .repo-line-desc {
+  margin: 10px 20px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #667;
+  width: auto;
+}
+/* --------------------------------------------------- */
+
+#github-app .contributor {
+  margin: 5px;
+  display: inline-block;
+  *display: inline; zoom: 1;
+}
+#github-app .contributor .avatar {
+  position: relative;
+  display: block;
+}
+#github-app .contributor .avatar:link,
+#github-app .contributor .avatar:visited,
+#github-app .contributor .avatar:hover,
+#github-app .contributor .avatar:active {
+  text-decoration: none; 
+}
+#github-app .contributor-name,
+#github-app .contributor-contributions {
+  position: absolute;
+  left: 0;
+  margin: 2px;
+  padding: 0 4px;
+  width: 68px;
+  font-size: 11px;
+  color: #fff;
+  background: #000;
+  background: rgba(0,0,0, 0.4);
+  text-shadow: 0 1px 0 rgba(0,0,0, 0.5);
+}
+#github-app .contributor-name {
+  bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+#github-app .contributor-contributions {
+  top: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* --------------------------------------------------- */
+
+#github-app .techs li {
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  vertical-align: middle;
+}

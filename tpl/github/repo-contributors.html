@@ -1,0 +1,18 @@
+<hr>
+
+<div>
+  <h3>Project Contributors ({{contributors.data.length}})</h3>
+
+  <ul class="contributors">
+      <li class="contributor" ng-repeat="contributor in contributors.data">
+        <a 
+          class="avatar" 
+          ng-href="#/github/{{contributor.login}}/"
+          title="{{contributionsTitle(contributor)}}">
+            <img alt="{{contributor.login}}'s avatar" ng-src="{{contributor.avatar_url}}" />
+            <span class="contributor-name">{{contributor.login}}</span>
+            <span class="contributor-contributions">{{contributor.contributions}}</span>
+        </a>
+      </li>
+  </ul>
+</div>

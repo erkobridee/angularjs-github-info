@@ -1,0 +1,78 @@
+<!doctype html>
+<html ng-app="GithubApp">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS - GitHub Info</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GitHub User Info">
+  <meta name="author" content="Erko Bridee">
+
+  <!-- Le styles -->
+  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+  <style type="text/css">body { padding-top: 60px; padding-bottom: 40px; }</style>
+  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet" type="text/css">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
+  <link 
+    rel="apple-touch-icon-precomposed" sizes="144x144" 
+    href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+  <link 
+    rel="apple-touch-icon-precomposed" sizes="114x114" 
+    href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+  <link 
+    rel="apple-touch-icon-precomposed" sizes="72x72" 
+    href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+  <link 
+    rel="apple-touch-icon-precomposed" 
+    href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+<body ng-controller="ctrl.App">
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">AngularJS - GitHub Info</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="{{searchNotActive}}active"><a ng-href="#{{searchUrlPath}}"><i class="icon-search icon-white"></i> Search</a></li>
+            <li class="{{aboutNotActive}}active"><a href="#/about"><i class="icon-question-sign icon-white"></i> About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>  
+
+  <div class="container">
+    <div id="github-app" ng-view></div>
+  </div>
+
+  <!-- JQuery Support to Twitter Bootstrap -->
+  <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+  <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+
+  <!-- AngularJS resources -->
+  <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+  <script src="http://code.angularjs.org/angular-resource-1.0.1.min.js"></script>
+
+  <!-- Application scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/components.js"></script>
+
+</body>
+</html>

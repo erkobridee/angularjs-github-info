@@ -1,0 +1,42 @@
+<ul class="breadcrumb">
+  <li><i class="icon-search"></i> <a href="#">Search Other</a> <span class="divider">/</span></li>
+  <li class="active">{{user.data.login}}</li>
+  <p class="pull-right"><a href="{{user.data.html_url}}" target="_blank">View on GitHub</a> <i class="icon-eye-open"></i></p>
+</ul>
+
+<!-- @begin: user info row -->
+<div class="row-fluid">
+  
+  <!-- @begin: avatar / login / name -->
+  <div class="user-login">
+    <div>
+      <span class="avatar user-avatar">
+        <img ng-src="{{user.data.avatar_url}}" alt="{{user.data.login}}'s avatar" />
+      </span>
+    </div>
+    <div>
+      <h2>{{user.data.login}}</h2>
+      <h2 ng-show="user.data.name"><small>({{user.data.name}})</small></h2>
+    </div>
+  </div>
+  <!-- @end: avatar / login / name -->
+
+  <!-- @begin: public repos / followers -->
+  <div class="pull-right well user-info">
+
+    <ul>
+      <li>
+        <h1>{{user.data.public_repos}}</h1>
+        <ng-pluralize count="user.data.public_repos" when="publicRepoForms"></ng-pluralize>
+      </li>
+      <li>
+        <h1>{{user.data.followers}}</h1>
+        <ng-pluralize count="user.data.followers" when="followerForms"></ng-pluralize>
+      </li>
+    </ul>
+
+  </div>
+  <!-- @end: public repos / followers -->
+
+</div>
+<!-- @end: user info row -->

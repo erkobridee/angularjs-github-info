@@ -1,0 +1,28 @@
+<div ng-show="gists.data.length" class="container">
+
+  <ul class="unstyled">
+    <li class="row repo" ng-repeat="gist in gists.data | orderBy:'-updated_at'">
+        
+        <!-- @begin: file name and description -->
+        <ul class="repo-name">
+          <li>
+            <h3><a ng-href="{{gist.html_url}}/" target="_blank">{{getFile(gist.files).filename}}</a></h3>
+            <span class="visible-desktop repo-line-desc" ng-show="gist.description">{{gist.description}}</span>
+          </li>
+        </ul>
+        <!-- @end: file name and description -->
+
+        <!-- @begin: file infos -->
+        <div class="pull-right repo-stats">
+          <ul>
+            <li class="repo-lang">
+              <b>{{getFile(gist.files).language}}</b>
+            </li>
+          </ul>
+        </div>
+        <!-- @end: file infos -->
+
+    </li>
+  </ul>
+
+</div>

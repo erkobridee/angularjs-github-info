@@ -1,0 +1,42 @@
+<div ng-show="repos.data.length" class="container">
+
+<ul class="unstyled">
+  <li class="row repo" ng-repeat="repo in repos.data | orderBy:'-watchers'">
+      
+      <!-- @begin: repository name and description -->
+      <ul class="repo-name">
+        <li>
+          <h3><a href="#/github/{{repo.full_name}}/">{{repo.name}}</a></h3>
+          <span class="visible-desktop repo-line-desc" ng-show="repo.description">{{repo.description}}</span>
+        </li>
+      </ul>
+      <!-- @end: repository name and description -->
+
+      <!-- @begin: repository infos -->
+      <div class="pull-right repo-stats">
+
+        <ul>
+          <li class="repo-lang">
+            <b>{{repo.language}}</b>
+          </li>
+          <li class="repo-watchers">
+            <b>{{repo.watchers}}</b>
+            <span>
+              <ng-pluralize count="repo.watchers" when="watchForms"></ng-pluralize>
+            </span>
+          </li>
+          <li class="repo-forks">
+            <b>{{repo.forks}}</b>
+            <span>
+              <ng-pluralize count="repo.forks" when="forkForms"></ng-pluralize>
+           </span>
+          </li>
+        </ul>
+
+      </div>
+      <!-- @end: repository infos -->
+
+  </li>
+</ul>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+
+  <!-- @begin: user not found -->
+  <div class="row" ng-show="user.data.message">
+
+    <ul class="breadcrumb">
+      <li><i class="icon-search"></i> <a href="#">Search</a></li>
+    </ul>
+
+    <p style="text-align:center">User Not Found</p>
+
+  </div>
+  <!-- @end: user not found -->
+
+  <!-- @begin: user found -->
+  <div ng-show="user.data.login">
+
+    <div class="row" ng-include="'tpl/github/user-info.html'"></div>
+    <div class="row">
+
+      <tabs>
+        <pane title="Public Repositories {{checkLength(repos.data)}}">
+          <div ng-include="'tpl/github/user-repos.html'"></div>
+        </pane>
+        <pane title="Public Gists {{checkLength(gists.data)}}">
+          <div ng-include="'tpl/github/user-gists.html'"></div>
+        </pane>
+      </tags>
+
+    </div>
+
+  </div>
+  <!-- @end: user found -->
+
+</div>

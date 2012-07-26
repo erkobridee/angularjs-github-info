@@ -1,0 +1,49 @@
+<ul class="breadcrumb">
+  <li><i class="icon-search"></i> <a href="#">Search Other</a> <span class="divider">/</span></li>
+  <li><a href="#github/{{repoInfo.data.owner.login}}">{{repoInfo.data.owner.login}}</a> <span class="divider">/</span></li>
+  <li class="active">{{repoInfo.data.name}}</li>
+  <p class="pull-right"><a href="{{repoInfo.data.html_url}}" target="_blank">View on GitHub</a> <i class="icon-eye-open"></i></p>
+</ul>  
+
+<!-- @begin: user info row -->
+<div class="row-fluid">
+
+  <!-- @begin: avatar / login / repo -->
+  <div class="user-login">
+    <div>
+      <span class="avatar user-avatar">
+        <img ng-src="{{repoInfo.data.owner.avatar_url}}" alt="{{repoInfo.data.owner.login}}'s avatar" />
+      </span>
+    </div>
+    <div>
+      <h2>{{repoInfo.data.owner.login}}</h2>
+      <h2><small>({{repoInfo.data.name}})</small></h2>
+    </div>
+  </div>
+  <!-- @end: avatar / login / repo -->
+
+  <!-- @begin: watchers / forks -->
+  <div class="pull-right well user-info">
+
+    <ul>
+      <li>
+        <h1>{{repoInfo.data.watchers}}</h1>
+        <ng-pluralize count="repoInfo.data.watchers" when="watchForms"></ng-pluralize>
+      </li>
+      <li>
+        <h1>{{repoInfo.data.forks}}</h1>
+        <ng-pluralize count="repoInfo.data.forks" when="forkForms"></ng-pluralize>
+      </li>
+    </ul>
+
+  </div>
+  <!-- @end: watchers / forks -->
+
+</div>
+<!-- @end: user info row -->
+
+<div ng-show="repoInfo.data.description">
+  <hr>
+  <h4>Description:</h4>
+  <span class="repo-desc">{{repoInfo.data.description}}</span>
+</div>
