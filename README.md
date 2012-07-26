@@ -5,7 +5,7 @@ This application is based on: AngularJS GitHub Contributors [App](http://daha.gi
 
 Demo
 ----
-View the app [AngulerJS GitHub Info].
+View the app [AngularJS GitHub Info].
 
 Application
 -----------
