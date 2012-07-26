@@ -1,4 +1,5 @@
 Ctrl = (function() {
+  "use strict";
 
   var watchForms = {
       '1': 'Watcher',
