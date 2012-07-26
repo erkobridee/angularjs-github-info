@@ -9,7 +9,7 @@ View the app [AngularJS GitHub Info].
 
 Application
 -----------
-* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) using [responsive desgin](http://twitter.github.com/bootstrap/scaffolding.html#responsive")
+* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) using [responsive desgin](http://twitter.github.com/bootstrap/scaffolding.html#responsive)
 * **Engine:** [AngularJS](http://angularjs.org/) ( [Guide](http://docs.angularjs.org/guide/) )
 * **Features:** List all public repositories, public gists and contributors repository from some GitHub user
 * **Data Access:** [GitHub API](http://developer.github.com/)
