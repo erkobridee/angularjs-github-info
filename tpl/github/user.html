@@ -1,5 +1,9 @@
 <div class="container">
 
+  <div ng-hide="user.data">
+    <p style="text-align:center"><img src="img/loading.gif"></p>    
+  </div>
+
   <!-- @begin: user not found -->
   <div class="row" ng-show="user.data.message">
 
