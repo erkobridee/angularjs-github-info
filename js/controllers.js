@@ -17,6 +17,8 @@ Ctrl = (function() {
   //-----------------------------------------------------------------
 
   Ctrl.prototype.App = function($scope) {
+    $scope.showForkBelt = 'yes';
+
     $scope.searchUrlPath = '/';
     $scope.searchNotActive = '';
     $scope.aboutNotActive = 'x';
@@ -27,11 +29,19 @@ Ctrl = (function() {
     }
 
     $scope.aboutPageSelected = function() {
+      $scope.showForkBelt = 'yes';
+
       $scope.searchNotActive = 'x';
       $scope.aboutNotActive = '';
     }
 
     $scope.updateSearchUrl = function(urlPath) {
+      if('/' === urlPath) {
+        $scope.showForkBelt = 'yes';
+      } else {
+        $scope.showForkBelt = undefined;
+      }
+
       $scope.searchUrlPath = urlPath;
       $scope.searchPageSelected();
     }    
