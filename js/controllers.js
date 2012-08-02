@@ -82,15 +82,48 @@ Ctrl = (function() {
 
     // access parent scope function
     $scope.updateSearchUrl(urlPath);
+   
     console.log( urlPath );
 
-    $scope.user = GithubResource.get({user: userParam, repo: ''});
+    console.log('GithubUserReposGists : request user info');
+    // blocking code
+    //$scope.user = GithubResource.get({user: userParam, repo: ''});
+    // non-blocking code
+    GithubResource.get(
+      {user: userParam, repo: ''}, 
+      function(res) {
+        $scope.user = res;
+        console.log('GithubUserReposGists : user info returned');
+      }
+    );
 
-    $scope.repos = GithubResource.get({user: userParam});
-
+    console.log('GithubUserReposGists : request user repos');
+    // blocking code
+    //$scope.repos = GithubResource.get({user: userParam});
+    // non-blocking code
+    GithubResource.get(
+      {user: userParam},
+      function(res) {
+        $scope.repos = res;
+        console.log('GithubUserReposGists : user repos returned');
+      }
+    );
+    
+    console.log('GithubUserReposGists : request user gists');
+    // blocking code
+    /*
     $scope.gists = GithubResource.get({
       'user': userParam,
       'repo': 'gists'
+    }); 
+    */
+    // non-blocking code
+    GithubResource.get({
+      'user': userParam,
+      'repo': 'gists'
+    }, function(res) {
+      $scope.gists = res;
+      console.log('GithubUserReposGists : user gists returned');
     });
     
     $scope.publicRepoForms = {
@@ -133,22 +166,46 @@ Ctrl = (function() {
 
     // access parent scope function
     $scope.updateSearchUrl(urlPath);
+    
     console.log( urlPath );
 
+    // blocking code
+    /*
     $scope.repoInfo = GithubResource.get({
       'query': 'repos',
       'user': userParam,
       'repo': repoParam
     });
+    */
+    // non-blocking code
+    GithubResource.get({
+      'query': 'repos',
+      'user': userParam,
+      'repo': repoParam
+    }, function(res) {
+      $scope.repoInfo = res;
+    });
 
     $scope.watchForms = watchForms;
     $scope.forkForms = forkForms;
 
+    // blocking code
+    /*
     $scope.contributors = GithubResource.get({
       'query': 'repos',
       'user': userParam,
       'repo': repoParam,
       'spec': 'contributors'
+    });
+    */
+    // non-blocking code
+    GithubResource.get({
+      'query': 'repos',
+      'user': userParam,
+      'repo': repoParam,
+      'spec': 'contributors'
+    }, function(res) {
+      $scope.contributors = res;
     });  
 
     //---
