@@ -1,4 +1,4 @@
-AngulerJS GitHub Info
+AngularJS GitHub Info
 =============================
 
 This application is based on: AngularJS GitHub Contributors [App](http://daha.github.com/angularJS-github-contributors/) | [GitHub](https://github.com/daha/angularJS-github-contributors/)
