@@ -9,9 +9,12 @@
   <meta name="author" content="Erko Bridee">
 
   <!-- Le styles -->
-  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-  <style type="text/css">body { padding-top: 60px; padding-bottom: 40px; }</style>
-  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <style type="text/css">
+    @media (min-width: 980px) {
+      body { padding-top: 60px; padding-bottom: 40px; }
+    }
+  </style>
   <link href="css/app.css" rel="stylesheet" type="text/css">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -20,19 +23,19 @@
   <![endif]-->
 
   <!-- Le fav and touch icons -->
-  <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
+  <link rel="shortcut icon" href="http://twitter.github.io/bootstrap/assets/images/favicon.ico">
   <link 
     rel="apple-touch-icon-precomposed" sizes="144x144" 
-    href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+    href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
   <link 
     rel="apple-touch-icon-precomposed" sizes="114x114" 
-    href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
   <link 
     rel="apple-touch-icon-precomposed" sizes="72x72" 
-    href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
   <link 
     rel="apple-touch-icon-precomposed" 
-    href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+    href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
 
 </head>
 <body ng-controller="ctrl.App">
@@ -63,12 +66,12 @@
   <a href="https://github.com/erkobridee/angularjs-github-info" ng-show="showForkBelt"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 2000;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 
   <!-- JQuery Support to Twitter Bootstrap -->
-  <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
-  <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
-
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  
   <!-- AngularJS resources -->
-  <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
-  <script src="http://code.angularjs.org/angular-resource-1.0.1.min.js"></script>
+  <script src="http://code.angularjs.org/1.1.4/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.1.4/angular-resource.min.js"></script>
 
   <!-- Application scripts -->
   <script src="js/app.js"></script>
