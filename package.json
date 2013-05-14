@@ -1,0 +1,32 @@
+{
+  "name": "angularjs-github-info",
+  "version": "0.1.0",
+  "description": "prove of concept using angularjs accessing github api",  
+  "author": "Erko Bridee",
+  "license": "Modified BSD License",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erkobridee/angularjs-github-info.git"
+  },
+  "keywords": [
+    "angularjs",
+    "prove",
+    "concept",
+    "github",
+    "api"
+  ],
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "devDependencies": {
+    "matchdep": "~0.1.2",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-shell": "~0.2.2",
+    "grunt-build-gh-pages": "0.0.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-clean": "~0.4.1"
+  }
+}
