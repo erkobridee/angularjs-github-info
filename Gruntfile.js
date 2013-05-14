@@ -41,6 +41,7 @@ module.exports = function(grunt) {
       build: {
         files: [
           {src: ['.gitignore'], dest: 'dist/', filter: 'isFile'},
+          {src: ['README.md'], dest: 'dist/', filter: 'isFile'},
           {expand: true, cwd: 'app/', src: ['**'], dest: 'dist/'}
         ]
       }
