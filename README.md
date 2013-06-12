@@ -23,7 +23,7 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 ### Grunt.js commands
 
-* `grunt` - run jshint (for while only Gruntfile.js passing through jshint >> TODO: adjust all js files to jshint)
+* `grunt` - run jshint
 
 * `grunt dev` - start server on port 1337, looking to `app` directory
 
