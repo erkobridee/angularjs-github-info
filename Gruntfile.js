@@ -6,28 +6,33 @@ module.exports = function(grunt) {
 
   //---
 
+  var appConfig = {
+    serverPort: 1337
+  };
+
   var gruntConfig = {
+
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
       all: [
-        'Gruntfile.js'
-        //, 'app/**/*.js'
+        'Gruntfile.js',
+        'app/**/*.js'
       ]
     },
 
     connect: {
       dev: {
         options: {
-          port: 1337,
-          base: 'app',
+          port: appConfig.serverPort,
+          base: 'app', 
           keepalive: true
         }
       },
-      test: {
+      prod: {
         options: {
-          port: 1337,
-          base: 'dist',
+          port: appConfig.serverPort,
+          base: 'dist', 
           keepalive: true
         }
       }
@@ -51,7 +56,13 @@ module.exports = function(grunt) {
       gh_pages: {
         
       }
-    }    
+    },
+
+    open: {
+      webapp: {
+        path: 'http://localhost:' + appConfig.serverPort
+      }
+    }
 
   };
 
@@ -59,9 +70,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint']);
 
-  grunt.registerTask('dev', ['jshint', 'connect:dev']);
+  grunt.registerTask('dev', ['jshint', 'open', 'connect:dev']);
 
-  grunt.registerTask('test', ['jshint', 'clean', 'copy', 'connect:test']);
+  grunt.registerTask('prod', ['jshint', 'clean', 'copy', 'open', 'connect:prod']);
 
   grunt.registerTask('publish', ['jshint', 'clean', 'copy', 'build_gh_pages:gh_pages']);
 

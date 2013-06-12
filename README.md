@@ -27,7 +27,7 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 * `grunt dev` - start server on port 1337, looking to `app` directory
 
-* `grunt test` - generate deploy version to `gh-pages` on `dist` directory and start server on port 1337 looking to this directory
+* `grunt prod` - generate deploy version to `gh-pages` on `dist` directory and start server on port 1337 looking to this directory
 
 * `grunt publish` - publish `dist` files on `gh-pages` branch
 

@@ -25,5 +25,5 @@ angular.module('GithubApp', ['GithubService', 'GithubComponents'])
           templateUrl:'tpl/about.html'
         }
       )
-      .otherwise({redirectTo:'/'})
+      .otherwise({redirectTo:'/'});
   });

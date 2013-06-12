@@ -4,8 +4,8 @@ Ctrl = (function() {
   var watchForms = {
       '1': 'Watcher',
       'other': 'Watchers'
-    }
-    , forkForms = {
+    },
+    forkForms = {
       '1': 'Fork',
       'other': 'Forks'
     };
@@ -26,14 +26,14 @@ Ctrl = (function() {
     $scope.searchPageSelected = function() {
       $scope.searchNotActive = '';
       $scope.aboutNotActive = 'x';    
-    }
+    };
 
     $scope.aboutPageSelected = function() {
       $scope.showForkBelt = 'yes';
 
       $scope.searchNotActive = 'x';
       $scope.aboutNotActive = '';
-    }
+    };
 
     $scope.updateSearchUrl = function(urlPath) {
       if('/' === urlPath) {
@@ -44,8 +44,9 @@ Ctrl = (function() {
 
       $scope.searchUrlPath = urlPath;
       $scope.searchPageSelected();
-    }    
-  }
+    };
+
+  };
 
   //-----------------------------------------------------------------
 
@@ -59,9 +60,9 @@ Ctrl = (function() {
       console.log('search user: ' + user);
 
       $location.path(['', 'github', user, ''].join('/'));
-    }
+    };
 
-  }
+  };
 
   //-----------------------------------------------------------------
 
@@ -71,14 +72,14 @@ Ctrl = (function() {
     customScopeName.aboutPageSelected();
 
     customScopeName.pageName = 'About this application';
-  }
+  };
 
   //-----------------------------------------------------------------
 
   Ctrl.prototype.GithubUserReposGists = function($scope, $routeParams, GithubResource) {
 
-    var userParam = $routeParams.user
-      , urlPath = ['', 'github', userParam, ''].join('/');
+    var userParam = $routeParams.user,
+        urlPath = ['', 'github', userParam, ''].join('/');
 
     // access parent scope function
     $scope.updateSearchUrl(urlPath);
@@ -142,9 +143,9 @@ Ctrl = (function() {
 
     $scope.getFile = function(files) {    
       for(var key in files) {
-        return files[key]; break;
+        return files[key]; 
       }
-    }
+    };
 
     $scope.checkLength = function(value) {
       if(typeof value !== 'undefined' && value.hasOwnProperty('length')) {
@@ -152,17 +153,17 @@ Ctrl = (function() {
       } else {
         return '(0)';
       }
-    }
+    };
     
-  }
+  };
 
   //-----------------------------------------------------------------
 
   Ctrl.prototype.GithubRepoInfoContributors = function($scope, $routeParams, GithubResource) {
 
-    var userParam = $routeParams.user
-      , repoParam = $routeParams.repo
-      , urlPath = ['', 'github', userParam, repoParam, ''].join('/');
+    var userParam = $routeParams.user,
+        repoParam = $routeParams.repo,
+        urlPath = ['', 'github', userParam, repoParam, ''].join('/');
 
     // access parent scope function
     $scope.updateSearchUrl(urlPath);
@@ -211,8 +212,8 @@ Ctrl = (function() {
     //---
 
     $scope.contributionsTitle = function(contributor) {
-      var contributionStr = 'Contribution'
-        , titleMsg;
+      var contributionStr = 'Contribution',
+          titleMsg;
 
       if(contributor.contributions > 1) {
         contributionStr = contributionStr + 's';
@@ -221,9 +222,9 @@ Ctrl = (function() {
       titleMsg = contributor.login + ' has ' + contributor.contributions + ' ' + contributionStr;
 
       return titleMsg;
-    }
+    };
 
-  }
+  };
 
   //-----------------------------------------------------------------
   return Ctrl;

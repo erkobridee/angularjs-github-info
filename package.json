@@ -1,7 +1,7 @@
 {
   "name": "angularjs-github-info",
   "version": "0.1.0",
-  "description": "prove of concept using angularjs accessing github api",  
+  "description": "prove of concept using angularjs accessing github api",
   "author": "Erko Bridee",
   "license": "Modified BSD License",
   "readmeFilename": "README.md",
@@ -27,6 +27,7 @@
     "grunt-shell": "~0.2.2",
     "grunt-build-gh-pages": "0.0.1",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-clean": "~0.4.1"
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-open": "~0.2.0"
   }
 }
