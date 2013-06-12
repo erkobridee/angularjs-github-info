@@ -20,6 +20,7 @@ angular.module('GithubComponents', []).
           panes.push(pane);
         };
       },
+      /*
       template:
         '<div class="tabbable">' +
           '<ul class="nav nav-tabs">' +
@@ -29,6 +30,8 @@ angular.module('GithubComponents', []).
           '</ul>' +
           '<div class="tab-content" ng-transclude></div>' +
         '</div>',
+      */
+      templateUrl: 'views/components/tabs.html',
       replace: true
     };
   }).
@@ -42,9 +45,12 @@ angular.module('GithubComponents', []).
       link: function(scope, element, attrs, tabsCtrl) {
         tabsCtrl.addPane(scope);
       },
+      /*
       template:
         '<div class="tab-pane" ng-class="{active: selected}" ng-transclude>' +
         '</div>',
+       */ 
+      templateUrl: 'views/components/pane.html',  
       replace: true
     };
   })

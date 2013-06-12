@@ -4,25 +4,25 @@ angular.module('GithubApp', ['GithubService', 'GithubComponents'])
       .when(
         '/', {
           controller: ctrl.Search, 
-          templateUrl:'tpl/search.html'
+          templateUrl:'views/search.html'
         }
       )
       .when(
         '/github/:user', {
           controller: ctrl.GithubUserReposGists,
-          templateUrl: 'tpl/github/user.html'
+          templateUrl: 'views/github/user.html'
         }
       )
       .when(
         '/github/:user/:repo/', {
           controller: ctrl.GithubRepoInfoContributors,
-          templateUrl: 'tpl/github/repo.html'
+          templateUrl: 'views/github/repo.html'
         }
       )
       .when(
         '/about', {
           controller: ctrl.About, 
-          templateUrl:'tpl/about.html'
+          templateUrl:'views/about.html'
         }
       )
       .otherwise({redirectTo:'/'});
