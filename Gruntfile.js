@@ -21,6 +21,28 @@ module.exports = function(grunt) {
       ]
     },
 
+    clean: {
+      build: ['dist/']
+    },
+
+    copy: {
+      build: {
+        files: [
+          {src: ['.gitignore'], dest: 'dist/', filter: 'isFile'},
+          {src: ['README.md'], dest: 'dist/', filter: 'isFile'},
+          {expand: true, cwd: 'app/', src: ['**'], dest: 'dist/'}
+        ]
+      }
+    },
+
+    // TODO: add template compilation
+
+    // TODO: add less
+
+    // TODO: add watch
+
+    // TODO: add livereload to development mode
+
     connect: {
       dev: {
         options: {
@@ -38,17 +60,9 @@ module.exports = function(grunt) {
       }
     },
 
-    clean: {
-      build: ['dist/']
-    },
-
-    copy: {
-      build: {
-        files: [
-          {src: ['.gitignore'], dest: 'dist/', filter: 'isFile'},
-          {src: ['README.md'], dest: 'dist/', filter: 'isFile'},
-          {expand: true, cwd: 'app/', src: ['**'], dest: 'dist/'}
-        ]
+    open: {
+      webapp: {
+        path: 'http://localhost:' + appConfig.serverPort
       }
     },
 
@@ -56,14 +70,9 @@ module.exports = function(grunt) {
       gh_pages: {
         
       }
-    },
-
-    open: {
-      webapp: {
-        path: 'http://localhost:' + appConfig.serverPort
-      }
     }
 
+    
   };
 
   grunt.initConfig(gruntConfig);
