@@ -20,15 +20,15 @@
   <!-- @begin: user found -->
   <div ng-show="user.data.login">
 
-    <div class="row" ng-include="'tpl/github/user-info.html'"></div>
+    <div class="row" ng-include="'views/github/user-info.html'"></div>
     <div class="row">
 
       <tabs>
         <pane title="Public Repositories {{checkLength(repos.data)}}">
-          <div ng-include="'tpl/github/user-repos.html'"></div>
+          <div ng-include="'views/github/user-repos.html'"></div>
         </pane>
         <pane title="Public Gists {{checkLength(gists.data)}}">
-          <div ng-include="'tpl/github/user-gists.html'"></div>
+          <div ng-include="'views/github/user-gists.html'"></div>
         </pane>
       </tags>
 
