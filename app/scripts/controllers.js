@@ -16,6 +16,8 @@ Ctrl = (function() {
 
   //-----------------------------------------------------------------
 
+  // see controllers/AppCtrl.js
+
   Ctrl.prototype.App = function($scope) {
     $scope.showForkBelt = 'yes';
 
@@ -50,6 +52,8 @@ Ctrl = (function() {
 
   //-----------------------------------------------------------------
 
+  // see controllers/SearchCtrl.js
+
   Ctrl.prototype.Search = function($scope, $location) {
     // access parent scope function
     $scope.updateSearchUrl('/');
@@ -63,8 +67,10 @@ Ctrl = (function() {
     };
 
   };
-
+  
   //-----------------------------------------------------------------
+
+  // see controllers/AboutCtrl.js
 
   // custom parameter scope name
   Ctrl.prototype.About = function(customScopeName) {
@@ -75,6 +81,8 @@ Ctrl = (function() {
   };
 
   //-----------------------------------------------------------------
+  
+  // see controllers/GithubUserReposGistsCtrl.js
 
   Ctrl.prototype.GithubUserReposGists = function($scope, $routeParams, GithubResource) {
 
@@ -112,12 +120,12 @@ Ctrl = (function() {
     
     console.log('GithubUserReposGists : request user gists');
     // blocking code
-    /*
-    $scope.gists = GithubResource.get({
-      'user': userParam,
-      'repo': 'gists'
-    }); 
-    */
+
+    //$scope.gists = GithubResource.get({
+    //  'user': userParam,
+    //  'repo': 'gists'
+    //});
+
     // non-blocking code
     GithubResource.get({
       'user': userParam,
@@ -156,8 +164,10 @@ Ctrl = (function() {
     };
     
   };
-
+  
   //-----------------------------------------------------------------
+  
+  // see controllers/GithubRepoInfoContributorsCtrl.js
 
   Ctrl.prototype.GithubRepoInfoContributors = function($scope, $routeParams, GithubResource) {
 
@@ -171,13 +181,12 @@ Ctrl = (function() {
     console.log( urlPath );
 
     // blocking code
-    /*
-    $scope.repoInfo = GithubResource.get({
-      'query': 'repos',
-      'user': userParam,
-      'repo': repoParam
-    });
-    */
+    //$scope.repoInfo = GithubResource.get({
+    //  'query': 'repos',
+    //  'user': userParam,
+    //  'repo': repoParam
+    //});
+
     // non-blocking code
     GithubResource.get({
       'query': 'repos',
@@ -191,14 +200,13 @@ Ctrl = (function() {
     $scope.forkForms = forkForms;
 
     // blocking code
-    /*
-    $scope.contributors = GithubResource.get({
-      'query': 'repos',
-      'user': userParam,
-      'repo': repoParam,
-      'spec': 'contributors'
-    });
-    */
+    //$scope.contributors = GithubResource.get({
+    //  'query': 'repos',
+    //  'user': userParam,
+    //  'repo': repoParam,
+    //  'spec': 'contributors'
+    //});
+
     // non-blocking code
     GithubResource.get({
       'query': 'repos',
@@ -225,7 +233,7 @@ Ctrl = (function() {
     };
 
   };
-
+  
   //-----------------------------------------------------------------
   return Ctrl;
 }());

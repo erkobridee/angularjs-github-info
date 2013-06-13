@@ -1,4 +1,5 @@
-angular.module('GithubApp', ['GithubService', 'GithubComponents'])
+angular.module('GithubApp', ['ngResource']); //'GithubService', , 'GithubComponents'
+/*
   .config(function($routeProvider) {
     $routeProvider
       .when(
@@ -27,3 +28,4 @@ angular.module('GithubApp', ['GithubService', 'GithubComponents'])
       )
       .otherwise({redirectTo:'/'});
   });
+  */

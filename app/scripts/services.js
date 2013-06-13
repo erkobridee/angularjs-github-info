@@ -1,4 +1,4 @@
-angular.module('GithubService', ['ngResource'])
+angular.module('GithubApp')
   .factory('GithubResource', function($resource) {
       var github = $resource(
         'https://api.github.com/:query/:user/:repo/:spec',
@@ -17,4 +17,4 @@ angular.module('GithubService', ['ngResource'])
       );
 
       return github;
-  });
+});

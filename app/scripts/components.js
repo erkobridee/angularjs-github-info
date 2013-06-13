@@ -1,4 +1,4 @@
-angular.module('GithubComponents', []).
+angular.module('GithubApp').
   
   directive('tabs', function() {
     return {
