@@ -2,6 +2,8 @@
 
 This application is based on: AngularJS GitHub Contributors [App](http://daha.github.com/angularJS-github-contributors/) | [GitHub](https://github.com/daha/angularJS-github-contributors/)
 
+*By [@ErkoBridee](https://twitter.com/erkobridee)*
+
 ## Demo
 
 View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-github-info/).
@@ -16,9 +18,17 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 ## Grunt.js support
 
-* dependency: [Node.js](http://nodejs.org/)
-
 * when clone this project run the command: `npm install` inside project directory
+
+
+### Prerequisites
+
+* Must have [Git](http://git-scm.com/) installed
+
+* Must have [node.js (at least v0.8.1)](http://nodejs.org/) installed with npm (Node Package Manager)
+
+* Must have [Grunt](https://github.com/gruntjs/grunt) node package installed globally.  `sudo npm install -g grunt-cli`
+
 
 
 ### Grunt.js commands
