@@ -35,7 +35,7 @@ function($scope, $routeParams, GithubResource) {
     $scope.repoInfo = res;
   });
 
-  /*
+  /* moved to AppCtrl
   $scope.watchForms = {
     '1': 'Watcher',
     'other': 'Watchers'

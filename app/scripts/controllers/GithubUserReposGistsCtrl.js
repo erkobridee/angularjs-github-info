@@ -67,7 +67,7 @@ function($scope, $routeParams, GithubResource) {
     'other': 'Followers'
   };
 
-  /*
+  /* moved to AppCtrl
   $scope.watchForms = {
     '1': 'Watcher',
     'other': 'Watchers'
