@@ -7,30 +7,46 @@ module.exports = function(grunt) {
   //---
 
   var appConfig = {
-    serverPort: 1337
+    serverPort: 1337,
+    paths: {
+      bower: 'components', // bower components dir
+      app: 'src', // source
+      build: 'build', // dev - mount
+      dist: 'dist' // to production
+    }
   };
 
   var gruntConfig = {
+
+    paths: appConfig.paths,
 
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
       all: [
         'Gruntfile.js',
-        'app/**/*.js'
+        '<%= paths.app %>/**/*.js'
       ]
     },
 
     clean: {
-      build: ['dist/']
+      working: [
+        '<%= paths.build %>/',  
+        '<%= paths.dist %>/'
+      ]
     },
 
     copy: {
-      build: {
+      prodbuild: {
         files: [
-          {src: ['.gitignore'], dest: 'dist/', filter: 'isFile'},
-          {src: ['README.md'], dest: 'dist/', filter: 'isFile'},
-          {expand: true, cwd: 'app/', src: ['**'], dest: 'dist/'}
+          {src: ['.gitignore'], dest: '<%= paths.dist %>/', filter: 'isFile'},
+          {src: ['README.md'], dest: '<%= paths.dist %>/', filter: 'isFile'},
+          {
+            cwd: '<%= paths.app %>/', 
+            src: ['**'], 
+            dest: '<%= paths.dist %>/', 
+            expand: true
+          }
         ]
       }
     },
@@ -41,20 +57,20 @@ module.exports = function(grunt) {
 
     // TODO: add watch
 
-    // TODO: add livereload to development mode
+      // TODO: add livereload to development mode
 
     connect: {
       dev: {
         options: {
           port: appConfig.serverPort,
-          base: 'app', 
+          base: '<%= paths.app %>', 
           keepalive: true
         }
       },
       prod: {
         options: {
           port: appConfig.serverPort,
-          base: 'dist', 
+          base: '<%= paths.dist %>', 
           keepalive: true
         }
       }
@@ -79,11 +95,17 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint']);
 
+  //---
+
+  grunt.registerTask('prodbuild', ['jshint', 'clean', 'copy:prodbuild']);  
+
+  //---
+
   grunt.registerTask('dev', ['jshint', 'open', 'connect:dev']);
 
-  grunt.registerTask('prod', ['jshint', 'clean', 'copy', 'open', 'connect:prod']);
+  grunt.registerTask('prod', ['prodbuild', 'open', 'connect:prod']);
 
-  grunt.registerTask('publish', ['jshint', 'clean', 'copy', 'build_gh_pages:gh_pages']);
+  grunt.registerTask('publish', ['prodbuild', 'build_gh_pages:gh_pages']);
 
 
 };
