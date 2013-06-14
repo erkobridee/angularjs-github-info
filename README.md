@@ -32,8 +32,6 @@ Enter the following commands in the terminal.
 3. `npm install`
 
 
-## Grunt.js support
-
 ### Prerequisites
 
 * Must have [Git](http://git-scm.com/) installed
@@ -47,7 +45,7 @@ Enter the following commands in the terminal.
 
 * `grunt` - run jshint
 
-* `grunt dev` - start server on port 1337, looking to `app` directory
+* `grunt dev` - start server on port 1337, looking to `src` directory
 
 * `grunt prod` - generate deploy version to `gh-pages` on `dist` directory and start server on port 1337 looking to this directory
 
