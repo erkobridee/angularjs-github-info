@@ -4,22 +4,35 @@ This application is based on: AngularJS GitHub Contributors [App](http://daha.gi
 
 *By [@ErkoBridee](https://twitter.com/erkobridee)*
 
+
 ## Demo
 
 View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-github-info/).
 
+
 ## Application
 
 * **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) using [responsive desgin](http://twitter.github.com/bootstrap/scaffolding.html#responsive)
+
 * **Engine:** [AngularJS](http://angularjs.org/) ( [Guide](http://docs.angularjs.org/guide/) )
+
 * **Features:** List all public repositories, public gists and contributors repository from some GitHub user
+
 * **Data Access:** [GitHub API](http://developer.github.com/)
 
 
+## Install AngularJS GitHub Info
+
+Enter the following commands in the terminal.
+
+1. `git clone https://github.com/erkobridee/angularjs-github-info.git`
+
+2. `cd angularjs-github-info`
+
+3. `npm install`
+
+
 ## Grunt.js support
-
-* when clone this project run the command: `npm install` inside project directory
-
 
 ### Prerequisites
 
@@ -28,7 +41,6 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 * Must have [node.js (at least v0.8.1)](http://nodejs.org/) installed with npm (Node Package Manager)
 
 * Must have [Grunt](https://github.com/gruntjs/grunt) node package installed globally.  `sudo npm install -g grunt-cli`
-
 
 
 ### Grunt.js commands
