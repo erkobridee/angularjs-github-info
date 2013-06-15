@@ -29,7 +29,9 @@ Enter the following commands in the terminal.
 
 2. `cd angularjs-github-info`
 
-3. `npm install`
+3. `bower install`
+
+4. `npm install`
 
 
 ### Prerequisites
@@ -39,6 +41,8 @@ Enter the following commands in the terminal.
 * Must have [node.js (at least v0.8.1)](http://nodejs.org/) installed with npm (Node Package Manager)
 
 * Must have [Grunt](https://github.com/gruntjs/grunt) node package installed globally.  `sudo npm install -g grunt-cli`
+
+* Must have [Bower](https://github.com/bower/bower) node package installed globally.  `sudo npm install -g bower`
 
 
 ### Grunt.js commands

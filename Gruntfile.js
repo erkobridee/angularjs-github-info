@@ -7,25 +7,77 @@ module.exports = function(grunt) {
   //---
 
   var appConfig = {
+
     serverPort: 1337,
+    
     paths: {
       bower: 'components', // bower components dir
       app: 'src', 
       build: 'build', 
       dist: 'dist' 
     },
-    angularjs: {
-      module: 'GithubApp'
-    }
+    
+    // grunt-hustler configs
+
+    template: {
+      views: {
+        files: {'./build/views/': './<%= paths.app %>/views/**/*.html'}
+      },
+      dev: {
+        files: {'./build/index.html': './<%= paths.app %>/index.html'},
+        environment: 'dev'
+      },
+      prod: {
+        files: '<%= template.dev.files %>',
+        environment: 'prod'
+      }
+    }, // end template
+
+    minifyHtml: {
+      index: {
+        files: {
+          './build/': './<%= paths.build %>/index.html'
+        }
+      },
+      all: {
+        files: {
+          './build/': './<%= paths.build %>/**/*.html'
+        }
+      }
+    }, // end minifyHtml
+
+    ngTemplateCache: { // TODO: review 
+      views: {
+        files: {
+          './build/scripts/views.js': './<%= paths.build %>/ ** / *.html'
+        }, 
+        options: {
+          module: 'GithubApp', // angular app module name
+          trim: './<%= paths.build %>'
+        }
+      }
+    } // end ngTemplateCache
+
   }; // end appConfig
+
+
+  //---
+
 
   var gruntConfig = {
 
+    pkg: grunt.file.readJSON('package.json'),
+
     paths: appConfig.paths,
 
-    angularjs_module: appConfig.angularjs.module,
+    //----------
 
-    pkg: grunt.file.readJSON('package.json'),
+    template: appConfig.template,
+
+    minifyHtml: appConfig.minifyHtml,
+
+    // TODO: review
+    // ngTemplateCache: appConfig.ngTemplateCache,
 
     //----------
 
@@ -69,63 +121,7 @@ module.exports = function(grunt) {
           dest: '<%= paths.build %>/'  
       }
 
-    }, // end imagemin
-
-    //----------
-
-    template: {
-
-      views: {
-        files: {'./build/views/': './<%= paths.app %>/views/**/*.html'}
-      },
-
-      dev: {
-        files: {'./build/index.html': './<%= paths.app %>/index.html'},
-        environment: 'dev'
-      },
-
-      prod: {
-        files: '<%= template.dev.files %>',
-        environment: 'prod'
-      }
-
-    }, // end template
-
-    //----------
-
-    minifyHtml: {
-
-      index: {
-        files: {
-          './build/': './<%= paths.build %>/index.html'
-        }
-      },
-
-      all: {
-        files: {
-          './build/': './<%= paths.build %>/**/*.html'
-        }
-      }
-
-    }, // end minifyHtml
-
-    //----------
-
-    /* TODO: review
-    ngTemplateCache: {
-      
-      views: {
-        files: {
-          './build/scripts/views.js': './<%= paths.build %>/ ** / *.html'
-        }, 
-        options: {
-          module: '<%= angularjs_module %>',
-          trim: './<%= paths.build %>'
-        }
-      }
-
-    }, // end ngTemplateCache
-    */
+    }, // end imagemin    
 
     //----------
 
@@ -204,8 +200,58 @@ module.exports = function(grunt) {
       },
 
       bower_components: {
-        // TODO: define
-      },
+        files: [
+          { // jquery
+            cwd: '<%= paths.bower %>/jquery/', 
+            src: ['jquery.min.js'], 
+            dest: '<%= paths.build %>/scripts/libs/', 
+            expand: true
+          },
+          { // angularjs
+            cwd: '<%= paths.bower %>/angularjs-bower/', 
+            src: [
+              'angular.min.js',
+              'angular-resource.min.js'
+            ], 
+            dest: '<%= paths.build %>/scripts/libs/', 
+            expand: true
+          },
+          { // twitter bootstrap css
+            cwd: '<%= paths.bower %>/bootstrap/docs/assets/css/', 
+            src: [
+              'bootstrap.css',
+              'bootstrap-responsive.css'
+            ], 
+            dest: '<%= paths.build %>/styles/', 
+            expand: true
+          },
+          { // twitter bootstrap img
+            cwd: '<%= paths.bower %>/bootstrap/docs/assets/img/', 
+            src: [
+              'glyphicons-halflings.png',
+              'glyphicons-halflings-white.png'
+            ], 
+            dest: '<%= paths.build %>/img/', 
+            expand: true
+          },
+          { // twitter bootstrap ico
+            cwd: '<%= paths.bower %>/bootstrap/docs/assets/', 
+            src: [
+              'ico/**'
+            ], 
+            dest: '<%= paths.build %>/img/', 
+            expand: true
+          },          
+          { // twitter bootstrap js
+            cwd: '<%= paths.bower %>/bootstrap/docs/assets/js/', 
+            src: [
+              'bootstrap.min.js'
+            ], 
+            dest: '<%= paths.build %>/scripts/libs/', 
+            expand: true
+          }
+        ]
+      }, // end bower_components
 
       img: {
         files: [
@@ -342,7 +388,7 @@ module.exports = function(grunt) {
     'clean:working',
     'jshint',
     'copy:js',
-    //'copy:bower_components',
+    'copy:bower_components',
     'copy:img',
     'copy:css',
     'template:views',

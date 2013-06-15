@@ -11,13 +11,22 @@
   <meta name="author" content="Erko Bridee">
 
   <!-- Le styles -->
+
+<% if (config.environment === 'prod') { %>
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<% } else { %>  
+  <link href="styles/bootstrap.css" rel="stylesheet">
+  <link href="styles/bootstrap-responsive.css" rel="stylesheet">
+<% } %>  
+
   <style type="text/css">
     @media (min-width: 980px) {
       body { padding-top: 60px; padding-bottom: 40px; }
     }
   </style>
   <link href="styles/app.css" rel="stylesheet" type="text/css">
+
+<% if (config.environment === 'prod') { %>
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -37,7 +46,26 @@
     href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
   <link 
     rel="apple-touch-icon-precomposed" 
-    href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+    href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png"> 
+
+<% } else { %>  
+  
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="img/ico/favicon.ico">
+  <link 
+    rel="apple-touch-icon-precomposed" sizes="144x144" 
+    href="img/ico/apple-touch-icon-144-precomposed.png">
+  <link 
+    rel="apple-touch-icon-precomposed" sizes="114x114" 
+    href="img/ico/apple-touch-icon-114-precomposed.png">
+  <link 
+    rel="apple-touch-icon-precomposed" sizes="72x72" 
+    href="img/ico/apple-touch-icon-72-precomposed.png">
+  <link 
+    rel="apple-touch-icon-precomposed" 
+    href="img/ico/apple-touch-icon-57-precomposed.png">    
+
+<% } %>  
 
 </head>
 <body ng-controller="ctrl.App">
@@ -72,6 +100,8 @@
   <a href="https://github.com/erkobridee/angularjs-github-info"  ng-show="showForkBelt"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 2000;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
   
 
+<% if (config.environment === 'prod') { %>
+  
   <!-- JQuery Support to Twitter Bootstrap -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
@@ -79,6 +109,18 @@
   <!-- AngularJS resources -->
   <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
   <script src="http://code.angularjs.org/1.1.5/angular-resource.min.js"></script>
+
+<% } else { %>
+  
+  <!-- JQuery Support to Twitter Bootstrap -->
+  <script src="scripts/libs/jquery.min.js" ></script>
+  <script src="scripts/libs/bootstrap.min.js"></script>
+  
+  <!-- AngularJS resources -->
+  <script src="scripts/libs/angular.min.js"></script>
+  <script src="scripts/libs/angular-resource.min.js"></script>
+
+<% }  %>
 
   <!-- Application scripts -->
   <script src="scripts/app.js"></script>
