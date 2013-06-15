@@ -45,7 +45,7 @@ Enter the following commands in the terminal.
 
 * `grunt` - run jshint
 
-* `grunt dev` - start server on port 1337, looking to `src` directory
+* `grunt dev` - development mode, prepare files, watch changes and start server on port 1337
 
 * `grunt prod` - generate deploy version to `gh-pages` on `dist` directory and start server on port 1337 looking to this directory
 
