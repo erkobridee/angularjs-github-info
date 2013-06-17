@@ -46,14 +46,14 @@ module.exports = function(grunt) {
       }
     }, // end minifyHtml
 
-    ngTemplateCache: { // TODO: review 
+    ngTemplateCache: { 
       views: {
         files: {
-          './build/scripts/views.js': './<%= paths.build %>/ ** / *.html'
+          './build/scripts/views.js': './<%= paths.build %>/views/**/*.html'
         }, 
         options: {
           module: 'GithubApp', // angular app module name
-          trim: './<%= paths.build %>'
+          trim: './<%= paths.build %>/'
         }
       }
     } // end ngTemplateCache
@@ -76,8 +76,7 @@ module.exports = function(grunt) {
 
     minifyHtml: appConfig.minifyHtml,
 
-    // TODO: review
-    // ngTemplateCache: appConfig.ngTemplateCache,
+    ngTemplateCache: appConfig.ngTemplateCache,
 
     //----------
 
@@ -98,7 +97,9 @@ module.exports = function(grunt) {
         '<%= paths.dist %>/'
       ],
 
-      build: ['<%= paths.build %>/']
+      build: ['<%= paths.build %>/'],
+
+      build_views: ['<%= paths.build %>/views/']
 
     }, // end clean
 
@@ -201,6 +202,12 @@ module.exports = function(grunt) {
 
       bower_components: {
         files: [
+          { // requirejs
+            cwd: '<%= paths.bower %>/requirejs/', 
+            src: ['requirejs.js'], 
+            dest: '<%= paths.build %>/scripts/libs/', 
+            expand: true
+          },
           { // jquery
             cwd: '<%= paths.bower %>/jquery/', 
             src: ['jquery.min.js'], 
@@ -399,15 +406,18 @@ module.exports = function(grunt) {
   grunt.registerTask('prod_build', [
     'clean:working',
     'jshint',
+    'copy:js',
+    'copy:css',
     'copy:img',
     'imagemin',
     'template:views',
     'template:prod',
     'minifyHtml:all',
-    //'ngTemplateCache',
+    'ngTemplateCache',
+    'clean:build_views',
+
     //'requirejs',
-    'copy:js',
-    'copy:css',
+
     // TODO: define and run tests
     'copy:prod',
     'clean:build'

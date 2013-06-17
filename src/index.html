@@ -120,12 +120,16 @@
   <script src="scripts/libs/angular.min.js"></script>
   <script src="scripts/libs/angular-resource.min.js"></script>
 
-<% }  %>
+<% } %>
 
   <!-- Application scripts -->
   <script src="scripts/app.js"></script>
   <script src="scripts/routes.js"></script>
   <script src="scripts/services.js"></script>
+
+<% if (config.environment === 'prod') { %>
+  <script src="scripts/views.js"></script>
+<% } %>
 
   <!-- components -->
   <script src="scripts/components/tabs.js"></script>
