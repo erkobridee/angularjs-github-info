@@ -429,7 +429,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('prod', ['prod_build', 'open', 'connect:prod']);
 
-  grunt.registerTask('publish', ['prodbuild', 'build_gh_pages:gh_pages']);
+  grunt.registerTask('publish', ['prod_build', 'build_gh_pages:gh_pages']);
 
 
 };
