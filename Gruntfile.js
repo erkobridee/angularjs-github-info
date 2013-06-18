@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     serverPort: 1337,
     
     paths: {
-      bower: 'components', // bower components dir
+      bower: 'cache/bower_components', // bower components dir
       app: 'src', 
       build: 'build', 
       dist: 'dist' 
