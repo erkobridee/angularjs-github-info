@@ -14,7 +14,8 @@ module.exports = function(grunt) {
       bower: 'cache/bower_components', // bower components dir
       app: 'src', 
       build: 'build', 
-      dist: 'dist' 
+      dist: 'dist',
+      gh_pages: 'cache/gh-pages' 
     },
     
     // grunt-hustler configs
@@ -284,7 +285,7 @@ module.exports = function(grunt) {
       },
       prod: {
         files: [
-          {src: ['.gitignore'], dest: '<%= paths.dist %>/', filter: 'isFile'},
+          //{src: ['.gitignore'], dest: '<%= paths.dist %>/', filter: 'isFile'},
           {src: ['README.md'], dest: '<%= paths.dist %>/', filter: 'isFile'},
           {
             cwd: '<%= paths.build %>/', 
@@ -295,6 +296,18 @@ module.exports = function(grunt) {
         ]
       },
       
+      //--- send files to cache/gh-pages/
+      gh_pages: {
+        files: [
+          {
+            cwd: '<%= paths.dist %>/', 
+            src: ['**'], 
+            dest: '<%= paths.gh_pages %>/', 
+            expand: true
+          }
+        ]
+      },
+
       //--- for watch tasks
       index: {
         files: [
@@ -374,9 +387,18 @@ module.exports = function(grunt) {
 
     //----------
 
-    build_gh_pages: {
+    /*
+      Grunt Github Pages
+      https://github.com/thanpolas/grunt-github-pages
+    */
+    githubPages: {
       gh_pages: {
-        
+        options: {
+          // The default commit message for the gh-pages branch
+          commitMessage: 'push <%= grunt.template.today("yyyy-mm-dd") %>'
+        },
+        // The folder where your gh-pages repo is
+        src: '<%= paths.gh_pages %>'
       }
     }
 
@@ -429,7 +451,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('prod', ['prod_build', 'open', 'connect:prod']);
 
-  grunt.registerTask('publish', ['prod_build', 'build_gh_pages:gh_pages']);
+  grunt.registerTask('publish', ['prod_build', 'copy:gh_pages', 'clean:working', 'githubPages:gh_pages']);
 
 
 };
