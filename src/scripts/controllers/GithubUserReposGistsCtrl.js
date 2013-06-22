@@ -4,16 +4,16 @@ angular.module('GithubApp').controller(
   'ctrl.GithubUserReposGists', 
 
   //dependency injection
-  ['$scope', '$routeParams', 'GithubResource', 
+  ['$scope', '$routeParams', 'GithubResource', 'NavBarService', 'PluralizeService',
     
 // controller function
-function($scope, $routeParams, GithubResource) {
+function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) {
 
   var userParam = $routeParams.user,
       urlPath = ['', 'github', userParam, ''].join('/');
 
-  // access parent scope function
-  $scope.updateSearchUrl(urlPath);
+  // update search menu option url
+  NavBarService.updateSearchUrl(urlPath);
 
   console.log( urlPath );
 
@@ -58,6 +58,7 @@ function($scope, $routeParams, GithubResource) {
     console.log('GithubUserReposGists : user gists returned');
   });
 
+  /*
   $scope.publicRepoForms = {
     '1': 'Public Repo',
     'other': 'Public Repos'
@@ -66,8 +67,12 @@ function($scope, $routeParams, GithubResource) {
     '1': 'Follower', 
     'other': 'Followers'
   };
+  */
 
-  /* moved to AppCtrl
+  $scope.publicRepoForms = PluralizeService.publicRepoForms;
+  $scope.followerForms = PluralizeService.followerForms;
+
+  /* 
   $scope.watchForms = {
     '1': 'Watcher',
     'other': 'Watchers'
@@ -77,6 +82,9 @@ function($scope, $routeParams, GithubResource) {
     'other': 'Forks'
   };
   */
+
+  $scope.watchForms = PluralizeService.watchForms;
+  $scope.forkForms = PluralizeService.forkForms;
 
   //---
 

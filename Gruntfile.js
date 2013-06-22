@@ -21,17 +21,33 @@ module.exports = function(grunt) {
     // grunt-hustler configs
 
     template: {
+
       views: {
         files: {'./build/views/': './<%= paths.app %>/views/**/*.html'}
       },
-      dev: {
-        files: {'./build/index.html': './<%= paths.app %>/index.html'},
+
+      js_dev: {
+        files: {
+          './build/scripts/main.js': './<%= paths.app %>/scripts/main.template.js'
+        },
         environment: 'dev'
       },
+
+      js_prod: {
+        files: '<%= template.js_dev.files %>',
+        environment: 'prod'
+      },
+
+      dev: {
+        files: { './build/index.html': './<%= paths.app %>/index.html' },
+        environment: 'dev'
+      },
+
       prod: {
         files: '<%= template.dev.files %>',
         environment: 'prod'
       }
+
     }, // end template
 
     minifyHtml: {
@@ -85,7 +101,8 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'LivereloadMiddleware.js',
-        '<%= paths.app %>/**/*.js'
+        '<%= paths.app %>/**/*.js',
+        '!<%= paths.app %>/scripts/**/*.template.js'
       ]
     }, // end jshing
 
@@ -100,7 +117,11 @@ module.exports = function(grunt) {
 
       build: ['<%= paths.build %>/'],
 
-      build_views: ['<%= paths.build %>/views/']
+      build_views: ['<%= paths.build %>/views/'],
+
+      dev_scripts: [
+        '<%= paths.build %>/scripts/'
+      ]
 
     }, // end clean
 
@@ -127,7 +148,47 @@ module.exports = function(grunt) {
 
     //----------
 
-    // TODO: add requirejs
+    requirejs: {
+
+      scripts: {
+        options: {
+          baseUrl: './<%= paths.build %>/scripts/',
+          findNestedDependencies: true,
+          logLevel: 0,
+          mainConfigFile: './<%= paths.build %>/scripts/main.js',
+          name: 'main',
+          onBuildWrite: function(moduleName, path, contents) {
+            var modulesToExclude, shouldExcludeModule;
+            modulesToExclude = ['main'];
+            shouldExcludeModule = modulesToExclude.indexOf(moduleName) >= 0;
+            if (shouldExcludeModule) {
+              return '';
+            }
+            return contents;
+          },
+          optimize: 'uglify2',
+          out: './<%= paths.dist %>/scripts/scripts.min.js',
+          preserveLicenseComments: false,
+          generateSourceMaps: true,
+          skipModuleInsertion: true,
+          uglify: {
+            no_mangle: false
+          }
+        }
+      }//,
+
+      /*
+      styles: {
+        options: {
+          baseUrl: './.<%= paths.build %>/styles/',
+          cssIn: './<%= paths.build %>/styles/styles.css',
+          logLevel: 0,
+          optimizeCss: 'standard',
+          out: './<%= paths.build %>/styles/styles.min.css'
+        }
+      }
+      */
+    }, // end requirejs
 
     //----------
 
@@ -182,7 +243,10 @@ module.exports = function(grunt) {
         files: [
           {
             cwd: '<%= paths.app %>/', 
-            src: ['scripts/**/*.js'], 
+            src: [
+              'scripts/**/*.js',
+              '!scripts/*.template.js'
+            ], 
             dest: '<%= paths.build %>/', 
             expand: true
           }
@@ -205,7 +269,7 @@ module.exports = function(grunt) {
         files: [
           { // requirejs
             cwd: '<%= paths.bower %>/requirejs/', 
-            src: ['requirejs.js'], 
+            src: ['require.js'], 
             dest: '<%= paths.build %>/scripts/libs/', 
             expand: true
           },
@@ -395,7 +459,7 @@ module.exports = function(grunt) {
       gh_pages: {
         options: {
           // The default commit message for the gh-pages branch
-          commitMessage: 'push <%= grunt.template.today("yyyy-mm-dd") %>'
+          commitMessage: 'push <%= grunt.template.today("yyyy-mm-dd hh:MM:ss") %>'
         },
         // The folder where your gh-pages repo is
         src: '<%= paths.gh_pages %>'
@@ -420,27 +484,36 @@ module.exports = function(grunt) {
     'copy:bower_components',
     'copy:img',
     'copy:css',
+    'template:js_dev',
     'template:views',
     'template:dev',
     'copy:dev'
   ]);
 
+  // TODO: review requirejs minification
+  // BUG: navbar not working in this version when js is in min version
   grunt.registerTask('prod_build', [
     'clean:working',
     'jshint',
     'copy:js',
+    'copy:bower_components',
     'copy:css',
     'copy:img',
     'imagemin',
+
     'template:views',
-    'template:prod',
-    'minifyHtml:all',
     'ngTemplateCache',
     'clean:build_views',
 
-    //'requirejs',
-
+    'template:js_prod',
+    'requirejs',
+    'clean:dev_scripts',
+    
+    'template:prod',
+    'minifyHtml:index',
+    
     // TODO: define and run tests
+
     'copy:prod',
     'clean:build'
   ]);

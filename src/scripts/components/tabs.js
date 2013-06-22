@@ -12,7 +12,7 @@ function() {
     transclude: true,
     scope: {},
 
-    controller: function($scope, $element) {
+    controller: [ '$scope', '$element', function($scope, $element) {
       var panes = $scope.panes = [];
 
       $scope.select = function(pane) {
@@ -26,7 +26,7 @@ function() {
         if (panes.length === 0) $scope.select(pane);
         panes.push(pane);
       };
-    },
+    }],
     
     templateUrl: 'views/components/tabs.html',
     replace: true

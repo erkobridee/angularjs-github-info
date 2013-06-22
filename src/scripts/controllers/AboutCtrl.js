@@ -4,13 +4,17 @@ angular.module('GithubApp').controller(
   'ctrl.About',
 
   //dependency injection
-  ['$scope', 
+  ['$scope', 'NavBarService',
 
 // controller function
-function(customScopeName) { // custom parameter scope name if you want 
+function(customScopeName, NavBarService) { // custom parameter scope name if you want 
+
+  console.log('ctrl.About');
+  console.log(NavBarService);
 
   // access parent scope function 
-  customScopeName.aboutPageSelected();
+  //customScopeName.aboutPageSelected();
+  NavBarService.aboutPageSelected();
 
   customScopeName.pageName = 'About this application';
 

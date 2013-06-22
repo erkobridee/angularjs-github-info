@@ -4,13 +4,17 @@ angular.module('GithubApp').controller(
   'ctrl.Search', 
 
   //dependency injection
-  ['$scope' , '$location', 
+  ['$scope' , '$location', 'NavBarService',
   
 // controller function
-function($scope, $location) {
+function($scope, $location, NavBarService) {
+
+  console.log('ctrl.Search');
+  console.log(NavBarService);
 
   // access parent scope function
-  $scope.updateSearchUrl('/');
+  //$scope.updateSearchUrl('/');
+  NavBarService.updateSearchUrl('/');
 
   $scope.searchAction = function() {
     var user = $scope.searchField || 'erkobridee';
