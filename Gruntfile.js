@@ -148,6 +148,9 @@ module.exports = function(grunt) {
 
     //----------
 
+    // TODO: review
+    // https://github.com/CaryLandholt/AngularFun/blob/master/Gruntfile.coffee
+
     requirejs: {
 
       scripts: {
