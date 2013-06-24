@@ -3,7 +3,7 @@ angular.module('GithubApp').controller(
   // controller name
   'ctrl.GithubRepoInfoContributors', 
 
-  //dependency injection
+  // dependency injection
   ['$scope', '$routeParams', 'GithubResource', 'NavBarService', 'PluralizeService',
   
 // controller function
@@ -16,8 +16,6 @@ function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) 
   // update search menu option url
   NavBarService.updateSearchUrl(urlPath);
   
-  console.log( urlPath );
-
   // blocking code
 
   //$scope.repoInfo = GithubResource.get({
@@ -34,17 +32,6 @@ function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) 
   }, function(res) {
     $scope.repoInfo = res;
   });
-
-  /* 
-  $scope.watchForms = {
-    '1': 'Watcher',
-    'other': 'Watchers'
-  };
-  $scope.forkForms = {
-    '1': 'Fork',
-    'other': 'Forks'
-  };
-  */
 
   $scope.watchForms = PluralizeService.watchForms;
   $scope.forkForms = PluralizeService.forkForms;

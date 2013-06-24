@@ -1,7 +1,9 @@
 angular.module('GithubApp').factory(
 
+  // factory name
   'GithubResource', 
 
+  // dependency injection
   [ '$resource', 
 
 function($resource) {

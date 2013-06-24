@@ -19,27 +19,22 @@ function(rootScope) {
   };
 
   var _searchPageSelected = function() {
-    console.log('NavBarService_searchPageSelected');
 
     nav.searchNotActive = '';
     nav.aboutNotActive = 'x';
 
-    //broadcastChanges(); 
   };
 
   var _aboutPageSelected = function() {
-    console.log('NavBarService_aboutPageSelected');
 
     nav.showForkBelt = 'yes';
 
     nav.searchNotActive = 'x';
     nav.aboutNotActive = '';
 
-    //broadcastChanges();
   };
 
   var _updateSearchUrl = function(urlPath) {
-    console.log('NavBarService_updateSearchUrl');
 
     if('/' === urlPath) {
       nav.showForkBelt = 'yes';
@@ -50,14 +45,6 @@ function(rootScope) {
     nav.searchUrlPath = urlPath;
     _searchPageSelected();
   };
-
-  //---------
-
-  /*
-  var broadcastChanges = function() {
-    rootScope.$broadcast('navBarChanged', nav);
-  };
-  */
 
   //---------
 
@@ -75,18 +62,6 @@ function(rootScope) {
       _aboutPageSelected();
     },
 
-    /*
-    updateSearchUrl: function(urlPath) {
-      if('/' === urlPath) {
-        nav.showForkBelt = 'yes';
-      } else {
-        nav.showForkBelt = undefined;
-      }
-
-      nav.searchUrlPath = urlPath;
-      _searchPageSelected();
-    }
-    */
     updateSearchUrl: function(urlPath) {
       _updateSearchUrl(urlPath);
     }
