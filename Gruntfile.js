@@ -359,7 +359,6 @@ module.exports = function(grunt) {
       },
       prod: {
         files: [
-          //{src: ['.gitignore'], dest: '<%= paths.dist %>/', filter: 'isFile'},
           {src: ['README.md'], dest: '<%= paths.dist %>/', filter: 'isFile'},
           {
             cwd: '<%= paths.build %>/', 
@@ -469,7 +468,7 @@ module.exports = function(grunt) {
       gh_pages: {
         options: {
           // The default commit message for the gh-pages branch
-          commitMessage: 'auto commit <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>'
+          commitMessage: 'gh-pages auto commit <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>'
         },
         // The folder where your gh-pages repo is
         src: '<%= paths.gh_pages %>'
@@ -500,8 +499,6 @@ module.exports = function(grunt) {
     'copy:dev'
   ]);
 
-  // TODO: review requirejs minification
-  // BUG: navbar not working in this version when js is in min version
   grunt.registerTask('prod_build', [
     'clean:working',
     'jshint',
