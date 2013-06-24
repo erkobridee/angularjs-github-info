@@ -5,18 +5,20 @@ require(
   paths: {
 
 <% if (config.environment === 'prod') { %>    
-    /*
+    
     jquery:           'libs/jquery.min',
     bootstrap:        'libs/bootstrap.min',
     angular:          'libs/angular.min',
     angular_resource: 'libs/angular-resource.min'
-    */
     
     // http://requirejs.org/docs/optimization.html
+    
+    /*
     jquery:           'empty:',
     bootstrap:        'empty:',
     angular:          'empty:',
     angular_resource: 'empty:'
+    */
 
 <% } else { %>
     jquery: [
@@ -107,7 +109,8 @@ require(
       deps: [
         'jquery', 'bootstrap', 
         'angular', 'angular_resource',
-        'app', 'routes', 
+        'app', 
+        'routes', 
         'views'
       ] 
     } //, '': {},

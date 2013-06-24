@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       app: 'src', 
       build: 'build', 
       dist: 'dist',
-      gh_pages: 'cache/gh-pages' 
+      gh_pages: 'cache/gh_pages' 
     },
     
     // grunt-hustler configs
@@ -121,6 +121,13 @@ module.exports = function(grunt) {
 
       dev_scripts: [
         '<%= paths.build %>/scripts/'
+      ],
+
+      gh_pages: [
+        '<%= paths.gh_pages %>/img/',
+        '<%= paths.gh_pages %>/scripts/',
+        '<%= paths.gh_pages %>/styles/',
+        '<%= paths.gh_pages %>/*.{md,html}'
       ]
 
     }, // end clean
@@ -462,7 +469,7 @@ module.exports = function(grunt) {
       gh_pages: {
         options: {
           // The default commit message for the gh-pages branch
-          commitMessage: 'push <%= grunt.template.today("yyyy-mm-dd hh:MM:ss") %>'
+          commitMessage: 'auto commit <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>'
         },
         // The folder where your gh-pages repo is
         src: '<%= paths.gh_pages %>'
@@ -527,7 +534,13 @@ module.exports = function(grunt) {
 
   grunt.registerTask('prod', ['prod_build', 'open', 'connect:prod']);
 
-  grunt.registerTask('publish', ['prod_build', 'copy:gh_pages', 'clean:working', 'githubPages:gh_pages']);
+  grunt.registerTask('publish', [
+    'prod_build', 
+    'clean:gh_pages', 
+    'copy:gh_pages', 
+    'clean:working', 
+    'githubPages:gh_pages'
+  ]);
 
 
 };
