@@ -1,0 +1,28 @@
+<div>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">{{title}}</a> <!-- AngularJS - GitHub Info -->
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="{{nav.searchNotActive}}active"><a ng-href="#{{nav.searchUrlPath}}"><i class="icon-search icon-white"></i> Search</a></li>
+          <li class="{{nav.aboutNotActive}}active"><a href="#/about"><i class="icon-question-sign icon-white"></i> About</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div> 
+
+<!--
+<a href="https://github.com/erkobridee/angularjs-github-info" ng-show="nav.showForkBelt"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 2000;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+-->
+
+<a href="https://github.com/erkobridee/angularjs-github-info"  ng-show="nav.showForkBelt"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 2000;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+</div> 
