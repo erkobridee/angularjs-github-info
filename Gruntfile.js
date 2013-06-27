@@ -134,8 +134,6 @@ module.exports = function(grunt) {
 
     //----------
 
-    // TODO: review less code
-    
     less: {
       dev: {
         options: {
@@ -143,7 +141,7 @@ module.exports = function(grunt) {
           paths: ["<%= paths.app %>/styles"]
         },
         files: {
-          "<%= paths.build %>/styles/app.css": "<%= paths.app %>/styles/app_styles.less"
+          "<%= paths.build %>/styles/app.css": "<%= paths.app %>/styles/app.less"
         }
       },
       prod: {
@@ -153,7 +151,7 @@ module.exports = function(grunt) {
           yuicompress: true
         },
         files: {
-          "<%= paths.build %>/styles/app.css": "<%= paths.app %>/styles/app_styles.less"
+          "<%= paths.build %>/styles/app.css": "<%= paths.app %>/styles/app.less"
         }
       }
     },
@@ -207,19 +205,7 @@ module.exports = function(grunt) {
             no_mangle: false
           }
         }
-      }//,
-
-      /*
-      styles: {
-        options: {
-          baseUrl: './.<%= paths.build %>/styles/',
-          cssIn: './<%= paths.build %>/styles/styles.css',
-          logLevel: 0,
-          optimizeCss: 'standard',
-          out: './<%= paths.build %>/styles/styles.min.css'
-        }
       }
-      */
     }, // end requirejs
 
     //----------
@@ -258,10 +244,9 @@ module.exports = function(grunt) {
 
       styles: {
         files : ['<%= paths.app %>/styles/**'],
-        tasks : [
-          //'copy:css', 
+        tasks : [ 
           'less:dev',
-          'copy:styles'
+          'copy:css'
         ]
       }
     }, // end watch
@@ -284,19 +269,7 @@ module.exports = function(grunt) {
             expand: true
           }
         ]
-      },
-
-      // TODO: when migrate to less remove this
-      css: {
-        files: [
-          {
-            cwd: '<%= paths.app %>/', 
-            src: ['styles/**/*.css'], 
-            dest: '<%= paths.build %>/', 
-            expand: true
-          }
-        ]
-      },      
+      },     
 
       bower_components: {
         files: [
@@ -391,7 +364,21 @@ module.exports = function(grunt) {
           }
         ]
       },
-      
+     
+      css: {
+        files: [
+          {
+            cwd: '<%= paths.build %>/', 
+            src: [
+              'styles/**/*.css',
+              '!styles/**/bootstrap*.css'
+            ], 
+            dest: '<%= paths.dist %>/', 
+            expand: true
+          }
+        ]
+      }, 
+
       //--- send files to cache/gh-pages/
       gh_pages: {
         files: [
@@ -515,10 +502,7 @@ module.exports = function(grunt) {
     'copy:js',
     'copy:bower_components',
     'copy:img',
-    
-    //'copy:css',
     'less:dev',
-
     'template:js_dev',
     'template:views',
     'template:dev',
@@ -530,8 +514,6 @@ module.exports = function(grunt) {
     'jshint',
     'copy:js',
     'copy:bower_components',
-
-    //'copy:css',
     'less:prod',
     
     'copy:img',
