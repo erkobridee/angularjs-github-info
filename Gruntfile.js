@@ -134,7 +134,29 @@ module.exports = function(grunt) {
 
     //----------
 
-    // TODO: add less
+    // TODO: review less code
+    
+    less: {
+      dev: {
+        options: {
+           // These paths are searched for @imports
+          paths: ["<%= paths.app %>/styles"]
+        },
+        files: {
+          "<%= paths.build %>/styles/app.css": "<%= paths.app %>/styles/app_styles.less"
+        }
+      },
+      prod: {
+        options: {
+           // These paths are searched for @imports
+          paths: ["<%= paths.app %>/styles"],
+          yuicompress: true
+        },
+        files: {
+          "<%= paths.build %>/styles/app.css": "<%= paths.app %>/styles/app_styles.less"
+        }
+      }
+    },
 
     //----------
 
@@ -237,7 +259,8 @@ module.exports = function(grunt) {
       styles: {
         files : ['<%= paths.app %>/styles/**'],
         tasks : [
-          'copy:css', 
+          //'copy:css', 
+          'less:dev',
           'copy:styles'
         ]
       }
@@ -273,7 +296,7 @@ module.exports = function(grunt) {
             expand: true
           }
         ]
-      },
+      },      
 
       bower_components: {
         files: [
@@ -419,7 +442,7 @@ module.exports = function(grunt) {
         files: [
           {
             cwd: '<%= paths.build %>/', 
-            src: ['scripts/**'], 
+            src: ['styles/**'], 
             dest: '<%= paths.dist %>/', 
             expand: true
           }
@@ -492,7 +515,10 @@ module.exports = function(grunt) {
     'copy:js',
     'copy:bower_components',
     'copy:img',
-    'copy:css',
+    
+    //'copy:css',
+    'less:dev',
+
     'template:js_dev',
     'template:views',
     'template:dev',
@@ -504,7 +530,10 @@ module.exports = function(grunt) {
     'jshint',
     'copy:js',
     'copy:bower_components',
-    'copy:css',
+
+    //'copy:css',
+    'less:prod',
+    
     'copy:img',
     'imagemin',
 
