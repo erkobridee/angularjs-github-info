@@ -1,7 +1,7 @@
 <div class="container">
 
   <div ng-hide="user.data">
-    <p style="text-align:center"><img src="img/loading.gif"></p>    
+    <p style="text-align:center"><img src="img/loading.gif"></p>
   </div>
 
   <!-- @begin: user not found -->
@@ -11,8 +11,8 @@
       <li><i class="icon-search"></i> <a href="#">Search Other</a></li>
     </ul>
 
-    <p style="text-align:center"><img src="img/user.png"></p>
-    <p style="text-align:center">User Not Found</p>
+    <div class="userNotFound"></div>
+    <p style="text-align:center">{{user.data.message}}</p>
 
   </div>
   <!-- @end: user not found -->

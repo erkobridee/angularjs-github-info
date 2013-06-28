@@ -6,4 +6,18 @@
   @import "contributor.less";
   @import "techs.less";
 
+  //---
+
+  @userNotFoundSize: 128px;
+
+  .userNotFound {
+
+    background-image: data-uri('image/png;base64', '../img/user.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-width: @userNotFoundSize;
+    min-height: @userNotFoundSize;
+
+  }
+
 }
