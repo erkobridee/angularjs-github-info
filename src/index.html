@@ -1,5 +1,16 @@
 <!doctype html>
+<% if (config.environment === 'prod') { %>
+  
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<% } else { %>
+  
 <html>
+
+<% } %>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -11,13 +22,22 @@
   <meta name="author" content="Erko Bridee">
 
   <!-- Le styles -->
-
-<% if (config.environment === 'prod') { %>
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-<% } else { %>  
   <link href="styles/bootstrap.css" rel="stylesheet">
   <link href="styles/bootstrap-responsive.css" rel="stylesheet">
-<% } %>  
+
+<% if (config.environment === 'prod') { %>
+  
+  <!-- For IE less than 9 -->
+  <!--[if lt IE 9]>
+    <script src="http:////cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <style type="text/css">
+        body { padding-top: 60px; padding-bottom: 40px; }
+    </style>
+  <![endif]-->
+
+<% } %>
 
   <link href="styles/app.css" rel="stylesheet" type="text/css">
 
@@ -36,15 +56,6 @@
     rel="apple-touch-icon-precomposed" 
     href="img/ico/apple-touch-icon-57-precomposed.png">    
 
-<% if (config.environment === 'prod') { %>
-
-  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-<% } %>  
-
 </head>
 <body>
 
@@ -55,7 +66,7 @@
   </div>
 
 <% if (config.environment === 'prod') { %>
-  
+
   <script src="scripts/scripts.min.js?v=<%= config.hash('./dist/scripts/scripts.min.js') %>"></script>
 
 <% } else { %>
