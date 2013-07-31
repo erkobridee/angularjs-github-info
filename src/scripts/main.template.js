@@ -38,7 +38,7 @@ require(
     ],
     angular_resource: [ 
       'http://code.angularjs.org/1.1.5/angular-resource.min',
-      '/scripts/libs/angular-resource.min.min'
+      '/scripts/libs/angular-resource.min'
     ]  
 <% } %>
 
