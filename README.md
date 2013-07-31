@@ -1,4 +1,6 @@
-# AngularJS GitHub Info [![Node Dependencies](https://david-dm.org/erkobridee/angularjs-github-info.png)](https://david-dm.org/erkobridee/angularjs-github-info)
+# AngularJS GitHub Info 
+
+[![Node Dependencies](https://david-dm.org/erkobridee/angularjs-github-info.png)](https://david-dm.org/erkobridee/angularjs-github-info) [![Node devDependencies](https://david-dm.org/erkobridee/angularjs-github-info/dev-status.png)](https://david-dm.org/erkobridee/angularjs-github-info#info=devDependencies)
 
 This application is based on: AngularJS GitHub Contributors [App](http://daha.github.com/angularJS-github-contributors/) | [GitHub](https://github.com/daha/angularJS-github-contributors/)
 
