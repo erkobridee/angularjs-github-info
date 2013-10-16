@@ -31,7 +31,14 @@
   <!--[if lt IE 9]>
     <script src="http:////cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>    
+    <script type="text/javascript">
+      var customTags = ['ng-include', 'ng-pluralize', 'ng-view']
+        .concat(['tabs', 'pane']) // app tags
+        .concat(['ng:include', 'ng:pluralize', 'ng:view']); // Optionally these for CSS
+      for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);  
+    </script>
+
     <style type="text/css">
         body { padding-top: 60px; padding-bottom: 40px; }
     </style>
