@@ -446,7 +446,9 @@ module.exports = function(grunt) {
         options: {
           port: appConfig.serverPort,
           base: '<%= paths.dist %>', 
-          middleware: require('./LivereloadMiddleware') 
+          //middleware: require('./LivereloadMiddleware') 
+          livereload: true,
+          open: true
         }
       },
 
@@ -454,19 +456,12 @@ module.exports = function(grunt) {
         options: {
           port: appConfig.serverPort,
           base: '<%= paths.dist %>', 
-          keepalive: true
+          keepalive: true,
+          open: true
         }
       }
 
     }, // end connect
-
-    //----------
-
-    open: {
-      webapp: {
-        path: 'http://localhost:' + appConfig.serverPort
-      }
-    },
 
     //----------
 
@@ -538,9 +533,9 @@ module.exports = function(grunt) {
 
   //---
 
-  grunt.registerTask('dev', ['dev_build', 'open', 'connect:dev', 'watch']);
+  grunt.registerTask('dev', ['dev_build', 'connect:dev', 'watch']);
 
-  grunt.registerTask('prod', ['prod_build', 'open', 'connect:prod']);
+  grunt.registerTask('prod', ['prod_build', 'connect:prod']);
 
   grunt.registerTask('publish', [
     'prod_build', 
