@@ -276,13 +276,15 @@ module.exports = function(grunt) {
           { // requirejs
             cwd: '<%= paths.bower %>/requirejs/', 
             src: ['require.js'], 
-            dest: '<%= paths.build %>/scripts/libs/', 
+            //dest: '<%= paths.build %>/scripts/libs/', 
+            dest: '<%= paths.build %>/vendor/js/', 
             expand: true
           },
           { // jquery
             cwd: '<%= paths.bower %>/jquery/', 
             src: ['jquery.min.js'], 
-            dest: '<%= paths.build %>/scripts/libs/', 
+            //dest: '<%= paths.build %>/scripts/libs/', 
+            dest: '<%= paths.build %>/vendor/js/', 
             expand: true
           },
           { // angularjs
@@ -291,43 +293,56 @@ module.exports = function(grunt) {
               'angular.min.js',
               'angular-resource.min.js'
             ], 
-            dest: '<%= paths.build %>/scripts/libs/', 
+            //dest: '<%= paths.build %>/scripts/libs/', 
+            dest: '<%= paths.build %>/vendor/js/', 
             expand: true
           },
+
+          //------------------------------------------------
           { // twitter bootstrap css
-            cwd: '<%= paths.bower %>/bootstrap/docs/assets/css/', 
+            cwd: '<%= paths.bower %>/bootstrap/dist/css', 
             src: [
-              'bootstrap.css',
-              'bootstrap-responsive.css'
+              '*.min.css'
             ], 
-            dest: '<%= paths.build %>/styles/', 
+            dest: '<%= paths.build %>/vendor/bootstrap/css', 
             expand: true
           },
-          { // twitter bootstrap img
-            cwd: '<%= paths.bower %>/bootstrap/docs/assets/img/', 
+          { // twitter bootstrap fonts
+            cwd: '<%= paths.bower %>/bootstrap/dist/fonts', 
             src: [
-              'glyphicons-halflings.png',
-              'glyphicons-halflings-white.png'
+              '*.*'
             ], 
-            dest: '<%= paths.build %>/img/', 
+            dest: '<%= paths.build %>/vendor/bootstrap/fonts', 
+            expand: true
+          },
+          { // twitter bootstrap js
+            cwd: '<%= paths.bower %>/bootstrap/dist/js', 
+            src: [
+              '*.min.js'
+            ], 
+            dest: '<%= paths.build %>/vendor/bootstrap/js', 
             expand: true
           },
           { // twitter bootstrap ico
-            cwd: '<%= paths.bower %>/bootstrap/docs/assets/', 
+            cwd: '<%= paths.bower %>/bootstrap/assets/ico', 
             src: [
-              'ico/**'
+              '*.*'
             ], 
-            dest: '<%= paths.build %>/img/', 
+            dest: '<%= paths.build %>/vendor/bootstrap/ico', 
             expand: true
-          },          
-          { // twitter bootstrap js
-            cwd: '<%= paths.bower %>/bootstrap/docs/assets/js/', 
+          },
+          //---
+          { // twitter bootstrap IE fallback
+            cwd: '<%= paths.bower %>/bootstrap/assets/js', 
             src: [
-              'bootstrap.min.js'
+              'html5shiv.js',
+              'respond.min.js'
             ], 
-            dest: '<%= paths.build %>/scripts/libs/', 
+            dest: '<%= paths.build %>/vendor/js', 
             expand: true
-          }
+          },
+          //------------------------------------------------
+
         ]
       }, // end bower_components
 
@@ -446,7 +461,6 @@ module.exports = function(grunt) {
         options: {
           port: appConfig.serverPort,
           base: '<%= paths.dist %>', 
-          //middleware: require('./LivereloadMiddleware') 
           livereload: true,
           open: true
         }
@@ -456,6 +470,7 @@ module.exports = function(grunt) {
         options: {
           port: appConfig.serverPort,
           base: '<%= paths.dist %>', 
+          hostname: 'localhost',
           keepalive: true,
           open: true
         }
