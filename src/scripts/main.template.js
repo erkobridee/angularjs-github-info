@@ -6,10 +6,10 @@ require(
 
 <% if (config.environment === 'prod') { %>    
     
-    jquery:           'libs/jquery.min',
-    bootstrap:        'libs/bootstrap.min',
-    angular:          'libs/angular.min',
-    angular_resource: 'libs/angular-resource.min'
+    jquery:           '../vendor/js/jquery.min',
+    bootstrap:        '../vendor/bootstrap/js/bootstrap.min',
+    angular:          '../vendor/js/angular.min',
+    angular_resource: '../vendor/js/angular-resource.min'
     
     // http://requirejs.org/docs/optimization.html
     
@@ -24,21 +24,21 @@ require(
     jquery: [
       '//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min',
       '//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min',
-      '/scripts/libs/jquery.min'
+      '../vendor/js/jquery.min'
     ],
     bootstrap: [
-      '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min',
-      '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min',
-      '/scripts/libs/bootstrap.min'
+      '//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.0/js/bootstrap.min',
+      '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min',
+      '../vendor/bootstrap/js/bootstrap.min'
     ],
     angular: [ 
       'http://code.angularjs.org/1.1.5/angular.min',
       '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min',
-      '/scripts/libs/angular.min'
+      '../vendor/js/angular.min'
     ],
     angular_resource: [ 
       'http://code.angularjs.org/1.1.5/angular-resource.min',
-      '/scripts/libs/angular-resource.min'
+      '../vendor/js/angular-resource.min'
     ]  
 <% } %>
 
