@@ -50,19 +50,6 @@ module.exports = function(grunt) {
 
     }, // end template
 
-    minifyHtml: {
-      index: {
-        files: {
-          './build/': './<%= paths.build %>/index.html'
-        }
-      },
-      all: {
-        files: {
-          './build/': './<%= paths.build %>/**/*.html'
-        }
-      }
-    }, // end minifyHtml
-
     ngTemplateCache: { 
       views: {
         files: {
@@ -88,12 +75,25 @@ module.exports = function(grunt) {
     paths: appConfig.paths,
 
     //----------
+    // grunt-hustler
 
     template: appConfig.template,
 
-    minifyHtml: appConfig.minifyHtml,
-
     ngTemplateCache: appConfig.ngTemplateCache,
+
+    //----------
+
+    htmlmin: {                                     // Task
+      index: {                                     // Target
+        options: {                                 // Target options
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {                                   // Dictionary of files
+          'build/index.html': 'build/index.html'
+        }
+      }
+    },
 
     //----------
 
@@ -528,11 +528,11 @@ module.exports = function(grunt) {
     'clean:dev_scripts',
     
     'template:prod',
-    'minifyHtml:index',
+    'htmlmin:index',
     
     // TODO: define and run tests
 
-    'copy:prod',
+    'copy:prod', 
     'clean:build'
   ]);
 
