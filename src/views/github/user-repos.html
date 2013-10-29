@@ -1,7 +1,7 @@
 <div ng-show="repos.data.length" class="container">
 
-<ul class="unstyled">
-  <li class="row repo" ng-repeat="repo in repos.data | orderBy:'-watchers'">
+<ul class="list-group"> <!-- unstyled -->
+  <li class="list-group-item repo" ng-repeat="repo in repos.data | orderBy:'-watchers'"> <!-- row -->
       
       <!-- @begin: repository name and description -->
       <ul class="name">
