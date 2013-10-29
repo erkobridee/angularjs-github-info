@@ -9,7 +9,7 @@
   "dependencies": {
     "jquery": "1.10.1",
     "angularjs-bower": "latest",
-    "bootstrap": "~2.3.2",
-    "requirejs": "~2.1.6"
+    "requirejs": "~2.1.6",
+    "bootstrap": "~3.0.0"
   }
 }
