@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "angularjs-github-info",
-  "version": "0.1.0",
+  "version": "6",
   "description": "prove of concept using angularjs accessing github api",
   "author": "Erko Bridee",
   "license": "Modified BSD License",
