@@ -11,6 +11,18 @@
 
   }
 
+  .login-mobile {
+
+    div {
+      margin-left: 10%;
+      float: left;
+      padding: 10px;
+      vertical-align: middle;
+      display: table-cell;
+    }
+
+  }
+
   .info {
 
     ul {
@@ -18,14 +30,40 @@
       margin-left: 0;
     }
 
-    li {
-      float: left;
-      text-align: center;
-      vertical-align: middle;
-      display: table-cell;
-      padding: 10px;
-    }
+    .common-li;
 
   }
 
+  .info-mobile {
+    
+    ul {
+      padding-left: 0;
+      margin-left: 20%;
+    }
+
+    .common-li;
+
+  }
+
+  .info-repo-mobile {
+    
+    ul {
+      padding-left: 0;
+      margin-left: 30%;
+    }
+
+    .common-li;
+
+  }
+
+}
+
+.common-li(@paddin: 10px) {
+  li {
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    padding: @paddin;
+  }
 }
