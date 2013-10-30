@@ -1,7 +1,7 @@
 <div ng-show="gists.data.length" class="container">
 
-  <ul class="list-group"> <!-- unstyled -->
-    <li class="list-group-item repo" ng-repeat="gist in gists.data | orderBy:'-updated_at'"> <!-- row -->
+  <div class="row"> 
+    <div class="row repo" ng-repeat="gist in gists.data | orderBy:'-updated_at'">
         
         <!-- @begin: file name and description -->
         <ul class="name">
@@ -22,7 +22,7 @@
         </div>
         <!-- @end: file infos -->
 
-    </li>
-  </ul>
+    </div>
+  </div>
 
 </div>
