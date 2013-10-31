@@ -148,7 +148,7 @@ module.exports = function(grunt) {
         options: {
            // These paths are searched for @imports
           paths: ["<%= paths.app %>/styles"],
-          yuicompress: true
+          compress: true
         },
         files: {
           "<%= paths.build %>/styles/app.css": "<%= paths.app %>/styles/app.less"
@@ -470,7 +470,6 @@ module.exports = function(grunt) {
         options: {
           port: appConfig.serverPort,
           base: '<%= paths.dist %>', 
-          hostname: 'localhost',
           keepalive: true,
           open: true
         }
