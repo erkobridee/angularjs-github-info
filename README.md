@@ -14,9 +14,9 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 ## Application
 
-* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) using [responsive desgin](http://twitter.github.com/bootstrap/scaffolding.html#responsive)
+* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.0.0
 
-* **Engine:** [AngularJS](http://angularjs.org/) ( [Guide](http://docs.angularjs.org/guide/) )
+* **Engine:** [AngularJS](http://angularjs.org/) v1.1.5 ( [Guide](http://docs.angularjs.org/guide/) )
 
 * **Features:** List all public repositories, public gists and contributors repository from some GitHub user
 
@@ -60,8 +60,8 @@ Enter the following commands in the terminal.
 
 ## Licenses
 
-* All my code is licensed under the [Modified BSD License].
+* All my code is licensed under the [MIT License].
 
 
 [AngularJS GitHub Info]: http://erkobridee.github.com/angularjs-github-info
-[Modified BSD License]: https://github.com/erkobridee/angularjs-github-info/blob/master/LICENSE
+[MIT License]: http://erkobridee.mit-license.org/
