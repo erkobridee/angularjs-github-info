@@ -22,12 +22,12 @@
     <script src="vendor/js/respond.min.js"></script>
 
     <script type="text/javascript">
-      var customTags = ['ng-include', 'ng-pluralize', 'ng-view']
+      var customTags = ['ng-include', 'ng-pluralize', 'ng-view', 'ng-repeat']
         .concat(['tabs', 'pane']) // app tags
         .concat(['ng:include', 'ng:pluralize', 'ng:view']); // Optionally these for CSS
-      for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);  
+      for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);
+      if(!window.console) window.console = {}; window.console.log = function(msg) {};
     </script>
-
   <![endif]-->
 
 <% } %>
