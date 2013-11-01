@@ -1,6 +1,9 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+  <style>
+    .ng-hide, .ng-cloak { display:none!important; }
+  </style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   
@@ -46,8 +49,27 @@
 
   <navbar title="AngularJS - GitHub Info"></navbar>
 
+<% if (config.environment === 'prod') { %>
+  <div class="row">
+    <!--[if lt IE 7]>
+    <p class="alert alert-error">Your browser is <em>ancient!</em>
+      <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+      <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
+    </p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <div class="alert">
+      You are using an old version of Internet Explorer.
+      For better and safer browsing experience please <a href="http://www.microsoft.com/IE9">upgrade IE</a>
+      or install <a href="http://google.com/chrome">Google Chrome browser</a>.
+    </div>
+    <![endif]-->
+  </div>
+<% } %>
+
   <div class="container">
-    <div id="github-app" ng-view ng-cloak></div>
+    <div id="github-app" ng-view class="ng-cloak"></div>
   </div>
 
 <% if (config.environment === 'prod') { %>
@@ -56,7 +78,7 @@
 
 <% } else { %>
   
-  <script data-main="scripts/main.js" src="vendor/js/require.js?v=<%= config.hash('./build/vendor/js/require.js') %>"></script>
+  <script data-main="scripts/main.js?v=<%= config.hash('./build/scripts/main.js') %>" src="vendor/js/require.js?v=<%= config.hash('./build/vendor/js/require.js') %>"></script>
 
 <% } %>
 
