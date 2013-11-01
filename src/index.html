@@ -49,17 +49,19 @@
 
   <navbar title="AngularJS - GitHub Info"></navbar>
 
-<% if (config.environment === 'prod') { %>
-  <div class="row">
+<% if ( config.environment === 'prod') { %>
+  <div class="container">
     <!--[if lt IE 7]>
-    <p class="alert alert-error">Your browser is <em>ancient!</em>
+    <div class="alert alert-danger">
+    <p>Your browser is <em>ancient!</em>
       <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
       <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
     </p>
+    </div>
     <![endif]-->
 
     <!--[if lt IE 9]>
-    <div class="alert">
+    <div class="alert alert-warning">
       You are using an old version of Internet Explorer.
       For better and safer browsing experience please <a href="http://www.microsoft.com/IE9">upgrade IE</a>
       or install <a href="http://google.com/chrome">Google Chrome browser</a>.
