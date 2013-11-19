@@ -18,7 +18,12 @@ cache
 build
 dist
 
+#-----------
+# Windows
 
+**/.db
+
+#-----------
 # Mac OS X
 
 **/.DS_Store
