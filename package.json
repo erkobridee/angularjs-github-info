@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "prove of concept using angularjs accessing github api",
   "author": "Erko Bridee",
-  "license": "Modified BSD License",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
