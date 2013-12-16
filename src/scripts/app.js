@@ -1,1 +1,3 @@
-angular.module('GithubApp', ['ngResource']);
+angular.module('GithubApp', [
+  'ngResource', 'ngRoute'
+]);
