@@ -14,9 +14,9 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 ## Application
 
-* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.0.0
+* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.0.3
 
-* **Engine:** [AngularJS](http://angularjs.org/) v1.1.5 ( [Guide](http://docs.angularjs.org/guide/) )
+* **Engine:** [AngularJS](http://angularjs.org/) v1.2.4 ( [Guide](http://docs.angularjs.org/guide/) )
 
 * **Features:** List all public repositories, public gists and contributors repository from some GitHub user
 
@@ -27,14 +27,12 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 Enter the following commands in the terminal.
 
-1. `git clone https://github.com/erkobridee/angularjs-github-info.git`
-
-2. `cd angularjs-github-info`
-
-3. `bower install`
-
-4. `npm install`
-
+```bach
+$ git clone https://github.com/erkobridee/angularjs-github-info.git
+$ cd angularjs-github-info
+$ bower install
+$ npm install
+```
 
 ### Prerequisites
 
@@ -42,20 +40,22 @@ Enter the following commands in the terminal.
 
 * Must have [node.js (at least v0.8.1)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-* Must have [Grunt](https://github.com/gruntjs/grunt) node package installed globally.  `sudo npm install -g grunt-cli`
+* Must have [Grunt](https://github.com/gruntjs/grunt) node package installed globally.  `[sudo] npm install -g grunt-cli`
 
-* Must have [Bower](https://github.com/bower/bower) node package installed globally.  `sudo npm install -g bower`
+* Must have [Bower](https://github.com/bower/bower) node package installed globally.  `[sudo] npm install -g bower`
 
 
 ### Grunt.js commands
 
 * `grunt` - run jshint
 
-* `grunt dev` - development mode, prepare files, watch changes and start server on port 1337
+* `grunt server` - development mode, prepare files, watch changes and start server on port 1337
 
-* `grunt prod` - generate deploy version to `gh-pages` on `dist` directory and start server on port 1337 looking to this directory
+* `grunt server:dist` - generate deploy version on `dist` directory and start server on port 1337 looking to this directory
 
-* `grunt publish` - publish `dist` files on `gh-pages` branch
+* `grunt gh_pages` - publish deploy version files on `gh-pages` branch
+
+  * `grunt gh_pages:init` - create local directory with github repository on gh_pages branch
 
 
 ## Licenses
