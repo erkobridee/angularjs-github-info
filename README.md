@@ -27,9 +27,9 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 Enter the following commands in the terminal.
 
-```bach
+```bash
 $ git clone https://github.com/erkobridee/angularjs-github-info.git
-$ cd angularjs-github-info
+$ cd angularjs-github-info/
 $ bower install
 $ npm install
 ```
