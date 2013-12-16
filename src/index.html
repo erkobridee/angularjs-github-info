@@ -16,6 +16,7 @@
   <!-- Le styles -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--<link href="vendor/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">-->
+  <link href="styles/app.css" rel="stylesheet" type="text/css">
 
 <% if (config.environment === 'prod') { %>
   
@@ -33,16 +34,16 @@
     </script>
   <![endif]-->
 
-<% } %>
-
-  <link href="styles/app.css" rel="stylesheet" type="text/css">
-
+<% } %>  
+  
   <!-- Favicons -->
+  <!--
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="vendor/bootstrap/ico/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="vendor/bootstrap/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="vendor/bootstrap/ico/apple-touch-icon-72-precomposed.png">
                   <link rel="apple-touch-icon-precomposed" href="vendor/bootstrap/ico/apple-touch-icon-57-precomposed.png">
                                  <link rel="shortcut icon" href="vendor/bootstrap/ico/favicon.png">
+  -->
 
 </head>
 <body>
@@ -80,7 +81,7 @@
 
 <% } else { %>
   
-  <script data-main="scripts/main.js?v=<%= config.hash('./build/scripts/main.js') %>" src="vendor/js/require.js?v=<%= config.hash('./build/vendor/js/require.js') %>"></script>
+  <script data-main="scripts/main.js?v=<%= config.hash('.local/build/scripts/main.js') %>" src="vendor/js/require.js?v=<%= config.hash('.local/build/vendor/js/require.js') %>"></script>
 
 <% } %>
 
