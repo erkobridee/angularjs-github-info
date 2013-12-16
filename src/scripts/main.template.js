@@ -6,13 +6,13 @@ require(
 
 <% if (config.environment === 'prod') { %>    
     
-    jquery:           '../vendor/js/jquery.min',
-    bootstrap:        '../vendor/bootstrap/js/bootstrap.min',
-    angular:          '../vendor/js/angular.min',
-    angular_resource: '../vendor/js/angular-resource.min',
+    jquery:           '../vendor/js/jquery.min', 
+    bootstrap:        '../vendor/bootstrap/js/bootstrap.min', 
+    angular:          '../vendor/js/angular.min', 
+    angular_resource: '../vendor/js/angular-resource.min', 
     angular_route:    '../vendor/js/angular-route.min' 
     
-    // http://requirejs.org/docs/optimization.html
+    // http://requirejs.org/docs/optimization.html 
     
     /*
     jquery:           'empty:',
