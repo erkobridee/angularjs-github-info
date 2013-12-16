@@ -23,7 +23,7 @@ module.exports = {
     files : ['<%= app.paths.project %>/scripts/main.template.js'],
     tasks : [
       'template:js_dev', 
-      'copy:scripts'
+      'newer:copy:scripts'
     ]
   },
 
@@ -31,15 +31,15 @@ module.exports = {
     files : ['<%= app.paths.project %>/views/**/*.html'],
     tasks : [
       'template:views', 
-      'copy:views'
+      'newer:copy:views'
     ]
   },
 
   scripts: {
     files : ['<%= app.paths.project %>/scripts/**'],
     tasks : [
-      'copy:js', 
-      'copy:scripts'
+      'newer:copy:js', 
+      'newer:copy:scripts'
     ]
   },
 
