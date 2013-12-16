@@ -5,65 +5,104 @@ module.exports = function(grunt) {
   require('load-grunt-config')(grunt, {configPath: __dirname+'/helpers/grunt/config'});
   console.log('... done\n');
 
-  // custom tasks
+  // load custom tasks
   grunt.loadTasks('helpers/grunt/tasks'); // grunt helloWorld
 
-  //--- grunt tasks
+
+  //--- @begin: grunt tasks
 
   grunt.registerTask('default', ['jshint']); 
 
-  /*
-  // init github repository on gh_pages
-  grunt.registerTask('init', [
-    'jshint',
-    'clean:gh_pages_dir',
-    'gitclone:gh_pages'
-  ]);
-
-  // publish on github gh_pages
-  grunt.registerTask('publish', [
-    'jshint',
-    'clean:gh_pages_content',
-    'copy:gitignore',
-    'build',
-    'copy:distToGHPages',
-    'githubPages:gh_pages',
-    'clean:dist'
-  ]);
-  */
 
   grunt.registerTask('server', function(target) {
     if (target === 'dist') {
-      //return grunt.task.run(['build', 'connect:dist']); 
-      return grunt.task.run(['helloWorld']); 
+      return grunt.task.run(['build:prod', 'connect:dist']); 
     }
 
     // dev
-    return grunt.task.run([
-      'clean:dist',
-      'clean:build',
-      'jshint',
-      'copy:images',
-      'copy:bower',
-      'copy:js',
-      'less:dev',
-      'template:views',
-      'template:js_dev',
-      'template:index_dev',
-      'copy:buildToDist',
+    return grunt.task.run([      
+      'build:dev',
       'connect:livereload',
       'watch'
     ]);
   });
 
-  /*
-  grunt.registerTask('build', [
-    'clean:dist',
-    'clean:build',
-    'jshint',
-    // add build tasks sequence
-    'clean:build'
-  ]);
-  */
+
+  grunt.registerTask('build', function(target) {
+
+    var clean = ['clean:dist', 'clean:build'],
+        start = clean.concat(['newer:jshint']);
+
+    if (target === 'prod') {
+
+      return grunt.task.run(start.concat([
+        'copy:bower',
+        'copy:js',
+
+        'copy:images',
+        'imagemin',
+        
+        'less:prod',
+
+        'template:views',
+        'ngTemplateCache',
+        'clean:build_views',
+
+        'template:js_prod',
+        'requirejs',
+        'clean:build_scripts',
+        
+        'template:index_prod',
+        'htmlmin:index',
+
+        'copy:buildToDist',
+
+        'clean:build'
+      ]));
+    
+    } else if (target === 'dev') {
+      
+      return grunt.task.run(start.concat([
+        'copy:images',
+        'copy:bower',
+        'copy:js',
+        'less:dev',
+        'template:views',
+        'template:js_dev',
+        'template:index_dev',
+        'copy:buildToDist'
+      ]));
+
+    } 
+
+    // clean working dir's and run jshint
+    return grunt.task.run(clean);
+  });
+
+
+  grunt.registerTask('gh_pages', function(target) {
+    
+    // init local repository on gh-pages branch
+    if (target === 'init') {
+      return grunt.task.run([
+        'jshint',
+        'clean:gh_pages_dir',
+        'gitclone:gh_pages'
+      ]);
+    }
+
+    // publish files on github gh-pages
+    return grunt.task.run([
+      'jshint',
+      'clean:gh_pages_content',
+      'copy:gitignore',
+      'build:prod',
+      'copy:distToGHPages',
+      'githubPages:gh_pages',
+      'clean:dist'
+    ]);
+  });
+
+  //--- @end: grunt tasks
 
 };
