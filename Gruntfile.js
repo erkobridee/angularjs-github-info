@@ -7,8 +7,8 @@ module.exports = function(grunt) {
 
   // load custom tasks
   grunt.loadTasks('helpers/grunt/tasks'); // grunt helloWorld
-
-
+  grunt.task.run('helloworld');
+  
   //--- @begin: grunt tasks
 
   grunt.registerTask('default', ['jshint']); 
