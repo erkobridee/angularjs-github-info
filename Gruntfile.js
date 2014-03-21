@@ -8,19 +8,19 @@ module.exports = function(grunt) {
   // load custom tasks
   grunt.loadTasks('helpers/grunt/tasks'); // grunt helloWorld
   grunt.task.run('helloworld');
-  
+
   //--- @begin: grunt tasks
 
-  grunt.registerTask('default', ['jshint']); 
+  grunt.registerTask('default', ['jshint']);
 
 
   grunt.registerTask('server', function(target) {
     if (target === 'dist') {
-      return grunt.task.run(['build:prod', 'connect:dist']); 
+      return grunt.task.run(['build:prod', 'connect:dist']);
     }
 
     // dev
-    return grunt.task.run([      
+    return grunt.task.run([
       'build:dev',
       'connect:livereload',
       'watch'
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 
         'copy:images',
         'imagemin',
-        
+
         'less:prod',
 
         'template:views',
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         'template:js_prod',
         'requirejs',
         'clean:build_scripts',
-        
+
         'template:index_prod',
         'htmlmin:index',
 
@@ -59,9 +59,9 @@ module.exports = function(grunt) {
 
         'clean:build'
       ]));
-    
+
     } else if (target === 'dev') {
-      
+
       return grunt.task.run(start.concat([
         'copy:images',
         'copy:bower',
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
         'copy:buildToDist'
       ]));
 
-    } 
+    }
 
     // clean working dir's and run jshint
     return grunt.task.run(clean);
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('gh_pages', function(target) {
-    
+
     // init local repository on gh-pages branch
     if (target === 'init') {
       return grunt.task.run([
