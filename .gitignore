@@ -15,6 +15,7 @@ node_modules
 npm-debug.log
 
 .local
+.temp
 cache
 build
 dist
