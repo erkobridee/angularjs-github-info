@@ -1,11 +1,11 @@
 angular.module('GithubApp').controller(
 
   // controller name
-  'ctrl.GithubUserReposGists', 
+  'ctrl.GithubUserReposGists',
 
   // dependency injection
   ['$scope', '$routeParams', 'GithubResource', 'NavBarService', 'PluralizeService',
-    
+
 // controller function
 function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) {
 
@@ -19,7 +19,7 @@ function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) 
   //$scope.user = GithubResource.get({user: userParam, repo: ''});
   // non-blocking code
   GithubResource.get(
-    {user: userParam, repo: ''}, 
+    {user: userParam, repo: ''},
     function(res) {
       $scope.user = res;
     }
@@ -40,7 +40,7 @@ function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) 
   $scope.gists = GithubResource.get({
     'user': userParam,
     'repo': 'gists'
-  }); 
+  });
   */
   // non-blocking code
   GithubResource.get({
@@ -59,9 +59,9 @@ function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) 
 
   //---
 
-  $scope.getFile = function(files) {    
+  $scope.getFile = function(files) {
     for(var key in files) {
-      return files[key]; 
+      return files[key];
     }
   };
 

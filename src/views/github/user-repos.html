@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="row repo" ng-repeat="repo in repos.data | orderBy:'-watchers'">
-      
+
       <!-- @begin: repository name and description -->
       <ul class="name">
         <li>
@@ -29,7 +29,7 @@
             <b>{{repo.forks}}</b>
             <span>
               <ng-pluralize count="repo.forks" when="forkForms"></ng-pluralize>
-           </span>
+            </span>
           </li>
         </ul>
 

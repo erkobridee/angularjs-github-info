@@ -4,7 +4,7 @@ angular.module('GithubApp')
   $routeProvider
     .when(
       '/', {
-        controller: 'ctrl.Search', 
+        controller: 'ctrl.Search',
         templateUrl:'views/search.html'
       }
     )
@@ -27,5 +27,5 @@ angular.module('GithubApp')
       }
     )
     .otherwise({redirectTo:'/'});
-  
+
 }]);

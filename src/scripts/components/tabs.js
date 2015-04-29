@@ -1,13 +1,13 @@
 angular.module('GithubApp').directive(
 
   // component name
-  'tabs', 
+  'tabs',
 
 // component definition
 function() {
 
   return {
-    
+
     restrict: 'E',
     transclude: true,
     scope: {},
@@ -27,7 +27,7 @@ function() {
         panes.push(pane);
       };
     }],
-    
+
     templateUrl: 'views/components/tabs.html',
     replace: true
 

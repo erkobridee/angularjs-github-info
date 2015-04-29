@@ -1,31 +1,31 @@
 angular.module('GithubApp').directive(
 
   // component name
-  'navbar', 
+  'navbar',
 
 // component definition
 function() {
-    
+
   return {
-    
+
     restrict: 'E',
     transclude: true,
-    
-    scope: { 
+
+    scope: {
       title: '@'
     },
-    
+
     controller: [
       '$scope', '$element', 'NavBarService',
       function($scope, $element, NavBarService) {
 
         $scope.nav = NavBarService.getNav();
-        
+
       }
     ],
-    
+
     templateUrl: 'views/components/navbar.html',
     replace: true
   };
 
-}); 
+});

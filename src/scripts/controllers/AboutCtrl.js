@@ -1,5 +1,5 @@
 angular.module('GithubApp').controller(
-  
+
   // controller name
   'ctrl.About',
 
@@ -7,7 +7,7 @@ angular.module('GithubApp').controller(
   ['$scope', 'NavBarService',
 
 // controller function
-function(customScopeName, NavBarService) { // custom parameter scope name if you want 
+function(customScopeName, NavBarService) { // custom parameter scope name if you want
 
   NavBarService.aboutPageSelected();
 

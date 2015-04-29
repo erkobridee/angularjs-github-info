@@ -1,7 +1,7 @@
 angular.module('GithubApp').service(
 
   // service name
-  'NavBarService',  
+  'NavBarService',
 
   // dependency injection
   [ '$rootScope',
@@ -49,7 +49,7 @@ function(rootScope) {
   //---------
 
   return {
-    
+
     getNav: function() {
       return nav;
     },

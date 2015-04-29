@@ -5,8 +5,8 @@
 
   <ul class="contributors">
       <li class="contributor" ng-repeat="contributor in contributors.data">
-        <a 
-          class="avatar" 
+        <a
+          class="avatar"
           ng-href="#/github/{{contributor.login}}/"
           title="{{contributionsTitle(contributor)}}">
             <img alt="{{contributor.login}}'s avatar" ng-src="{{contributor.avatar_url}}" />

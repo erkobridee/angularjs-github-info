@@ -1,11 +1,11 @@
 angular.module('GithubApp').controller(
-  
+
   // controller name
-  'ctrl.Search', 
+  'ctrl.Search',
 
   // dependency injection
   ['$scope' , '$location', 'NavBarService',
-  
+
 // controller function
 function($scope, $location, NavBarService) {
 
@@ -14,7 +14,7 @@ function($scope, $location, NavBarService) {
 
   $scope.searchAction = function() {
     var user = $scope.searchField || 'erkobridee';
-    
+
     $location.path(['', 'github', user, ''].join('/'));
   };
 

@@ -1,11 +1,11 @@
 angular.module('GithubApp').controller(
-  
+
   // controller name
-  'ctrl.GithubRepoInfoContributors', 
+  'ctrl.GithubRepoInfoContributors',
 
   // dependency injection
   ['$scope', '$routeParams', 'GithubResource', 'NavBarService', 'PluralizeService',
-  
+
 // controller function
 function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) {
 
@@ -15,7 +15,7 @@ function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) 
 
   // update search menu option url
   NavBarService.updateSearchUrl(urlPath);
-  
+
   // blocking code
 
   //$scope.repoInfo = GithubResource.get({
@@ -44,7 +44,7 @@ function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) 
   //  'repo': repoParam,
   //  'spec': 'contributors'
   //});
-  
+
   // non-blocking code
   GithubResource.get({
     'query': 'repos',
@@ -53,7 +53,7 @@ function($scope, $routeParams, GithubResource, NavBarService, PluralizeService) 
     'spec': 'contributors'
   }, function(res) {
     $scope.contributors = res;
-  });  
+  });
 
   //---
 

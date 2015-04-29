@@ -1,7 +1,7 @@
 angular.module('GithubApp').service(
 
   // service name
-  'PluralizeService',  
+  'PluralizeService',
 
   // dependency injection
   [ //'$scope',
@@ -16,8 +16,8 @@ function() {
       'other': 'Public Repos'
     },
 
-    followerForms: { 
-      '1': 'Follower', 
+    followerForms: {
+      '1': 'Follower',
       'other': 'Followers'
     },
 
@@ -25,7 +25,7 @@ function() {
       '1': 'Watcher',
       'other': 'Watchers'
     },
-    
+
     forkForms: {
       '1': 'Fork',
       'other': 'Forks'

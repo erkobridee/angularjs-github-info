@@ -1,13 +1,13 @@
 angular.module('GithubApp').factory(
 
   // factory name
-  'GithubResource', 
+  'GithubResource',
 
   // dependency injection
-  [ '$resource', 
+  [ '$resource',
 
 function($resource) {
-  
+
       var github = $resource(
         'https://api.github.com/:query/:user/:repo/:spec',
         {
