@@ -1,0 +1,8 @@
+<div ng-hide="repoInfo.data">
+    <p style="text-align:center"><img src="img/loading.gif"></p>    
+  </div>
+
+<div ng-show="repoInfo.data">
+  <div class="row" ng-include="'views/github/repo-info.html'"></div>
+  <div class="row" ng-include="'views/github/repo-contributors.html'"></div>
+</div>
