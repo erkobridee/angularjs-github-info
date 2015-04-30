@@ -16,7 +16,7 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 * **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.0.3
 
-* **Engine:** [AngularJS](http://angularjs.org/) v1.2.4 ( [Guide](http://docs.angularjs.org/guide/) )
+* **Engine:** [AngularJS](http://angularjs.org/) v1.3.15 ( [Guide](http://docs.angularjs.org/guide/) )
 
 * **Features:** List all public repositories, public gists and contributors repository from some GitHub user
 
@@ -30,7 +30,6 @@ Enter the following commands in the terminal.
 ```bash
 $ git clone https://github.com/erkobridee/angularjs-github-info.git
 $ cd angularjs-github-info/
-$ bower install
 $ npm install
 ```
 
@@ -38,24 +37,22 @@ $ npm install
 
 * Must have [Git](http://git-scm.com/) installed
 
-* Must have [node.js (at least v0.8.1)](http://nodejs.org/) installed with npm (Node Package Manager)
+* Must have [node.js (at least v0.10 and less then v0.12)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-* Must have [Grunt](https://github.com/gruntjs/grunt) node package installed globally.  `[sudo] npm install -g grunt-cli`
+* Must have [gulp](https://github.com/gulpjs/gulp) node package installed globally.  `[sudo] npm install -g gulp`
 
 * Must have [Bower](https://github.com/bower/bower) node package installed globally.  `[sudo] npm install -g bower`
 
 
-### Grunt.js commands
+### Gulp commands
 
-* `grunt` - run jshint
+* `gulp` - development mode, prepare files, watch changes and start server on port 1337
 
-* `grunt server` - development mode, prepare files, watch changes and start server on port 1337
+* `gulp --release --preview` - generate deploy version on `dist` directory and start server on port 1337 looking to this directory
 
-* `grunt server:dist` - generate deploy version on `dist` directory and start server on port 1337 looking to this directory
+* `gulp --publish` - publish deploy version files on `gh-pages` branch
 
-* `grunt gh_pages` - publish deploy version files on `gh-pages` branch
-
-  * `grunt gh_pages:init` - create local directory with github repository on gh_pages branch
+  * `gulp --init` - create local directory with github repository on gh-pages branch
 
 
 ## Licenses
