@@ -45,19 +45,17 @@ module.exports = (function() {
 
     project: {
       lint       : [
-        config.paths.src + '/**/*.js',
-        '!' + config.paths.src + '/vendor/**/*.js' // TODO: review
+        config.paths.src + '/**/*.js'
       ],
       watch      : [
-        config.paths.src + '/**/*.js',
-        '!' + config.paths.src + '/vendor/**/*.js',
-        '!' + config.paths.src + '/{app,shared}/*{,*/**}/tests/**/*.js' // TODO: review
+        config.paths.src + '/**/*.js'
+        // '!' + config.paths.src + '/{app,shared}/*{,*/**}/tests/**/*.js'
       ],
-      copy2build : [ // TODO: review
-        config.paths.src + '/**/*.js',
-        '!' + config.paths.src + '/require.unit.load.js',
-        '!' + config.paths.src + '/vendor/**/*.js',
-        '!' + config.paths.src + '/{app,shared}/*{,*/**}/tests/**/*.js'
+      copy2build : [
+        config.paths.src + '/**/*.js'
+        // '!' + config.paths.src + '/require.unit.load.js',
+        // '!' + config.paths.src + '/vendor/**/*.js',
+        // '!' + config.paths.src + '/{app,shared}/*{,*/**}/tests/**/*.js'
       ]
     },
 
