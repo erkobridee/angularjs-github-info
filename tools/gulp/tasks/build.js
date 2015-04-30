@@ -3,17 +3,17 @@ module.exports = function(gulp, $) {
   gulp.task('build', function( done ) {
 
     $.runSequence(
+      'copy:vendor2dist',
       [
         'copy:js2build',
         'styles',
         'build:min:index.html',
-        'copy:vendor2dist',
         'build:min:images'
       ],
       'html2js',
-      // 'update:main:package.js',
-      // 'requirejs',
-      // 'build:concat:js',
+      'update:main:package.js',
+      'requirejs',
+      'build:concat:js',
       'clean:build',
       done
     );
@@ -27,12 +27,12 @@ module.exports = function(gulp, $) {
   });
 
   gulp.task('build:min:images', function() {
-    return gulp.src( $.config.paths.src + '/shared/img/**/*' )
+    return gulp.src( $.config.paths.src + '/img/**/*' )
       .pipe( $.imagemin({
         progressive: true,
         interlaced: true
       }) )
-      .pipe( gulp.dest( $.config.paths.dist + '/shared/img' ) );
+      .pipe( gulp.dest( $.config.paths.dist + '/img' ) );
   });
 
   gulp.task('build:concat:js', function() {
