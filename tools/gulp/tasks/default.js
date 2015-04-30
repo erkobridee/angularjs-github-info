@@ -8,7 +8,15 @@ module.exports = function(gulp, $) {
       'bower'
     ];
 
-    if( $.is.release ) {
+    if( $.is.init ) {
+
+      runTasks = ['init'];
+
+    } else if( $.is.publish ) {
+
+      runTasks = runTasks.concat([ 'publish' ]);
+
+    } else if( $.is.release ) {
 
       runTasks = runTasks.concat([ 'build' ]);
 

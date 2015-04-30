@@ -31,9 +31,17 @@ module.exports = (function() {
 
   //---
 
+  config.git = {
+    branch: 'gh-pages',
+    commitMessage: '<%= branch %> automated commit <%= time %>'
+  };
+
+  //---
+
   config.paths = {
     src       : 'src',
     bower     : '.local/bower',
+    repoDir   : '.local/' + config.git.branch,
     build     : '.temp',
     vendor    : '.temp/vendor',
     dist      : 'dist'

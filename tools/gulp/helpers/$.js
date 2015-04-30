@@ -46,7 +46,9 @@ $.is = {
   release : !!$.args.release,
   preview : !!$.args.preview,
   less    : !!$.args.less,
-  sass    : !!$.args.sass
+  // sass    : !!$.args.sass,
+  publish : !!$.args.publish,
+  init    : !!$.args.init
 };
 
 //---

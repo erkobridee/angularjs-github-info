@@ -12,4 +12,9 @@ module.exports = function(gulp, $) {
       .pipe( gulp.dest( $.config.paths.dist + '/vendor' ) );
   });
 
+  gulp.task('copy:dist2repo-dir', function() {
+    return gulp.src( $.config.paths.dist + '/**/*' )
+      .pipe( gulp.dest( $.config.paths.repoDir ) );
+  });
+
 };
