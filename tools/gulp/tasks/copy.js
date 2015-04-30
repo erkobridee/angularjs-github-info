@@ -7,8 +7,7 @@ module.exports = function(gulp, $) {
 
   gulp.task('copy:vendor2dist', function() {
     return gulp.src([
-        $.config.paths.src + '/vendor/**/*',
-        '!' + $.config.paths.src + '/vendor/**/*.{less,html}'
+        $.config.paths.vendor + '/**/*'
       ])
       .pipe( gulp.dest( $.config.paths.dist + '/vendor' ) );
   });
