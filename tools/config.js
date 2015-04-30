@@ -14,7 +14,8 @@ module.exports = (function() {
   //--
 
   config.packages = [
-    './package.json'
+    './package.json',
+    './bower.json'
   ];
 
   //---
