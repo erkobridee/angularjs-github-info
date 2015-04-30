@@ -46,7 +46,6 @@ $.is = {
   release : !!$.args.release,
   preview : !!$.args.preview,
   less    : !!$.args.less,
-  // sass    : !!$.args.sass,
   publish : !!$.args.publish,
   init    : !!$.args.init
 };
@@ -86,7 +85,13 @@ $.is = {
   // @begin: config proxies
   var proxyMiddleware = require('http-proxy-middleware'),
       hasGulpTaskName = !!$.args._[0],
-      configProxyFlag = !hasGulpTaskName;
+      configProxyFlag = false;
+
+  if( $.is.release ) {
+    configProxyFlag = $.is.preview;
+  } else {
+    configProxyFlag = !hasGulpTaskName && !( $.is.publish || $.is.init );
+  }
 
   if( $.config.webserver.proxies ) {
     $.config
