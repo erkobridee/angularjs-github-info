@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div ng-hide="vm.user.data">
+    <p style="text-align:center"><img src="img/loading.gif"></p>
+  </div>
+
+  <!-- @begin: user not found -->
+  <div class="row" ng-show="vm.user.data.message">
+
+    <ul class="breadcrumb">
+      <li><i class="icon-search"></i> <a href="#/">Search Other</a></li>
+    </ul>
+
+    <div class="userNotFound"></div>
+    <p style="text-align:center">{{vm.user.data.message}}</p>
+
+  </div>
+  <!-- @end: user not found -->
+
+  <!-- @begin: user found -->
+  <div ng-show="vm.user.data.login">
+
+    <div class="row" ng-include="'app/github/templates/user-info.html'"></div>
+    <div class="row">
+
+      <tabs>
+        <pane title="Public Repositories {{vm.checkLength(vm.repos.data)}}">
+          <div ng-include="'app/github/templates/user-repos.html'"></div>
+        </pane>
+        <pane title="Public Gists {{vm.checkLength(vm.gists.data)}}">
+          <div ng-include="'app/github/templates/user-gists.html'"></div>
+        </pane>
+      </tabs>
+
+    </div>
+
+  </div>
+  <!-- @end: user found -->
+
+</div>

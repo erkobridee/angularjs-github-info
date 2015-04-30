@@ -1,0 +1,96 @@
+<ul class="breadcrumb">
+  <li><i class="icon-search"></i> <a href="#/">Search Other</a></li>
+  <li><a href="#github/{{vm.repoInfo.data.owner.login}}">{{vm.repoInfo.data.owner.login}}</a></li>
+  <li class="active">{{vm.repoInfo.data.name}}</li>
+  <p class="hidden-xs pull-right"><a href="{{vm.repoInfo.data.html_url}}" target="_blank">View on GitHub</a> <i class="glyphicon glyphicon-eye-open"></i></p>
+</ul>
+
+<!-- @begin: user info row -->
+<div class="row user">
+
+  <!-- @begin: avatar / login / repo -->
+
+  <!-- mobile -->
+  <div class="visible-xs">
+    <div class="row login-mobile">
+      <div>
+        <span class="avatar user-avatar">
+          <img ng-src="{{vm.repoInfo.data.owner.avatar_url}}" alt="{{vm.repoInfo.data.owner.login}}'s avatar" />
+        </span>
+      </div>
+      <div>
+        <h2>{{vm.repoInfo.data.owner.login}}</h2>
+        <h2><small>({{vm.repoInfo.data.name}})</small></h2>
+      </div>
+    </div>
+  </div> <!-- ./mobile -->
+
+  <!-- tablet-desktop -->
+  <div class="hidden-xs col-md-6">
+    <div class="login">
+    <div>
+      <span class="avatar user-avatar">
+        <img ng-src="{{vm.repoInfo.data.owner.avatar_url}}" alt="{{vm.repoInfo.data.owner.login}}'s avatar" />
+      </span>
+    </div>
+    <div>
+      <h2>{{vm.repoInfo.data.owner.login}}</h2>
+      <h2><small>({{vm.repoInfo.data.name}})</small></h2>
+    </div>
+  </div>
+  </div> <!-- ./tablet-desktop -->
+
+  <!-- @end: avatar / login / repo -->
+
+  <!-- @begin: watchers / forks -->
+
+  <!-- mobile -->
+  <div class="visible-xs">
+    <div class="row info-repo-mobile">
+      <ul>
+        <li>
+          <h1>{{vm.repoInfo.data.watchers}}</h1>
+          <ng-pluralize count="vm.repoInfo.data.watchers" when="vm.watchForms"></ng-pluralize>
+        </li>
+        <li>
+          <h1>{{vm.repoInfo.data.forks}}</h1>
+          <ng-pluralize count="vm.repoInfo.data.forks" when="vm.forkForms"></ng-pluralize>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row text-center">
+      <br>
+      <p><a href="{{vm.repoInfo.data.html_url}}" target="_blank">View on GitHub</a> <i class="glyphicon glyphicon-eye-open"></i></p>
+      <br>
+    </div>
+  </div> <!-- ./mobile -->
+
+  <!-- tablet-desktop -->
+  <div class="hidden-xs col-md-6">
+    <div class="pull-right well info">
+
+      <ul>
+        <li>
+          <h1>{{vm.repoInfo.data.watchers}}</h1>
+          <ng-pluralize count="vm.repoInfo.data.watchers" when="vm.watchForms"></ng-pluralize>
+        </li>
+        <li>
+          <h1>{{vm.repoInfo.data.forks}}</h1>
+          <ng-pluralize count="vm.repoInfo.data.forks" when="vm.forkForms"></ng-pluralize>
+        </li>
+      </ul>
+
+    </div>
+  </div><!-- ./tablet-desktop -->
+
+  <!-- @end: watchers / forks -->
+
+</div>
+<!-- @end: user info row -->
+
+<div ng-show="vm.repoInfo.data.description">
+  <hr>
+  <h4>Description:</h4>
+  <span class="repo-desc">{{vm.repoInfo.data.description}}</span>
+</div>
