@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "angularjs-github-info",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "prove of concept using angularjs accessing github api",
   "author": "Erko Bridee",
   "license": "MIT",
@@ -49,6 +49,7 @@
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-css": "^1.1.0",
     "gulp-plumber": "^1.0.0",
+    "gulp-print": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-shell": "^0.4.1",
     "gulp-task-listing": "^1.0.0",
