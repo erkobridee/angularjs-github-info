@@ -1,7 +1,5 @@
 module.exports = function(gulp, $) {
 
-  var requirejs = require('requirejs');
-
   //----------------------------------------------------------------------------
 
   /*
