@@ -37,7 +37,7 @@ $ npm install
 
 * Must have [Git](http://git-scm.com/) installed
 
-* Must have [node.js (at least v0.10 and less then v0.12)](http://nodejs.org/) installed with npm (Node Package Manager)
+* Must have [node.js (at least v0.10 and)](http://nodejs.org/) installed with npm (Node Package Manager)
 
 * Must have [gulp](https://github.com/gulpjs/gulp) node package installed globally.  `[sudo] npm install -g gulp`
 
