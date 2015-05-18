@@ -23,7 +23,7 @@
     "api"
   ],
   "engines": {
-    "node": ">=0.10.0 <0.12"
+    "node": ">=0.10.0"
   },
   "devDependencies": {
     "browser-sync": "^2.6.9",
