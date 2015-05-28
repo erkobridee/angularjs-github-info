@@ -21,7 +21,7 @@ define(function(require) {
       transclude: true,
 
       controller: ControllerFn,
-      controllerAs: 'vm',
+      controllerAs: 'tabs',
       // So our isolated scope will be stored
       // on the `this` context of our controller
       // instead of

@@ -2,15 +2,15 @@
 
   <!-- mobile -->
   <ul class="visible-xs nav nav-pills nav-justified nav-stacked">
-    <li ng-repeat="pane in vm.panes" ng-class="{active:pane.selected}">
-      <a href="" ng-click="vm.select(pane)">{{pane.title}}</a>
+    <li ng-repeat="pane in tabs.panes" ng-class="{active:pane.selected}">
+      <a href="" ng-click="tabs.select(pane)">{{pane.title}}</a>
     </li>
   </ul> <!-- ./mobile -->
 
   <!-- tablet-desktop -->
   <ul class="hidden-xs nav nav-tabs">
-    <li ng-repeat="pane in vm.panes" ng-class="{active:pane.selected}">
-      <a href="" ng-click="vm.select(pane)">{{pane.title}}</a>
+    <li ng-repeat="pane in tabs.panes" ng-class="{active:pane.selected}">
+      <a href="" ng-click="tabs.select(pane)">{{pane.title}}</a>
     </li>
   </ul> <!-- ./tablet-desktop -->
 
