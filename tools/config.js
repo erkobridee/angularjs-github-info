@@ -58,13 +58,9 @@ module.exports = (function() {
       ],
       watch      : [
         config.paths.src + '/**/*.js'
-        // '!' + config.paths.src + '/{app,shared}/*{,*/**}/tests/**/*.js'
       ],
       copy2build : [
         config.paths.src + '/**/*.js'
-        // '!' + config.paths.src + '/require.unit.load.js',
-        // '!' + config.paths.src + '/vendor/**/*.js',
-        // '!' + config.paths.src + '/{app,shared}/*{,*/**}/tests/**/*.js'
       ]
     },
 
@@ -81,12 +77,6 @@ module.exports = (function() {
   var stylefilename = 'app';
 
   config.styles = {
-    /*
-    sass: {
-      // main    : config.paths.src + '/scss/' + stylefilename + '.scss',
-      // project : config.paths.src + '/{app,scss,shared}/**.sass'
-    },
-    */
     less: {
       main    : config.paths.src + '/less/' + stylefilename + '.less',
       project : config.paths.src + '/{app,less,shared}/**/*.less'
