@@ -46,6 +46,8 @@ $ npm install
 
 ### Gulp commands
 
+> If you want to know more about Gulp usage in this project, check [[GitHub] soudev / gulp-steps](https://github.com/soudev/gulp-steps). This project is based on step [04](https://github.com/soudev/gulp-steps/tree/master/04). 
+
 * `gulp` - development mode, prepare files, watch changes and start server on port 1337
 
 * `gulp --release --preview` - generate deploy version on `dist` directory and start server on port 1337 looking to this directory
