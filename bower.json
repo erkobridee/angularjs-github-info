@@ -13,8 +13,8 @@
     "jquery": "1.11.2",
     "requirejs": "2.1.17",
     "bootstrap": "3.0.3",
-    "angular": "1.4.0",
-    "angular-resource": "1.4.0",
-    "angular-route": "1.4.0"
+    "angular": "1.4.1",
+    "angular-resource": "1.4.1",
+    "angular-route": "1.4.1"
   }
 }
