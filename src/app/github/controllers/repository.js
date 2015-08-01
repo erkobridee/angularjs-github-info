@@ -55,6 +55,7 @@ define(function(require) {
 
     function loadData() {
 
+      // RepositoryInfo
       GithubResource.get({
         'query': 'repos',
         'user': userParam,
@@ -63,6 +64,7 @@ define(function(require) {
         vm.repoInfo = res;
       });
 
+      // RepositoryContributors
       GithubResource.get({
         'query': 'repos',
         'user': userParam,
