@@ -1,8 +1,8 @@
 <div class="row">
   <ul class="breadcrumb">
     <li><i class="icon-search"></i> <a href="#/">Search Other</a></li>
-    <li class="active">{{vm.user.data.login}}</li>
-    <p class="hidden-xs pull-right"><a href="{{vm.user.data.html_url}}" target="_blank">View on GitHub</a> <i class="glyphicon glyphicon-eye-open"></i></p>
+    <li class="active">{{vm.user.login}}</li>
+    <p class="hidden-xs pull-right"><a href="{{vm.user.html_url}}" target="_blank">View on GitHub</a> <i class="glyphicon glyphicon-eye-open"></i></p>
   </ul>
 </div>
 
@@ -16,12 +16,12 @@
     <div class="row login-mobile">
       <div>
         <span class="avatar user-avatar">
-          <img ng-src="{{vm.user.data.avatar_url}}" alt="{{vm.user.data.login}}'s avatar" />
+          <img ng-src="{{vm.user.avatar_url}}" alt="{{vm.user.login}}'s avatar" />
         </span>
       </div>
       <div>
-        <h2>{{vm.user.data.login}}</h2>
-        <h2 ng-show="vm.user.data.name"><small>({{vm.user.data.name}})</small></h2>
+        <h2>{{vm.user.login}}</h2>
+        <h2 ng-show="vm.user.name"><small>({{vm.user.name}})</small></h2>
       </div>
     </div>
   </div> <!-- ./mobile -->
@@ -31,12 +31,12 @@
     <div class="login">
       <div>
         <span class="avatar user-avatar">
-          <img ng-src="{{vm.user.data.avatar_url}}" alt="{{vm.user.data.login}}'s avatar" />
+          <img ng-src="{{vm.user.avatar_url}}" alt="{{vm.user.login}}'s avatar" />
         </span>
       </div>
       <div>
-        <h2>{{vm.user.data.login}}</h2>
-        <h2 ng-show="vm.user.data.name"><small>({{vm.user.data.name}})</small></h2>
+        <h2>{{vm.user.login}}</h2>
+        <h2 ng-show="vm.user.name"><small>({{vm.user.name}})</small></h2>
       </div>
     </div>
   </div> <!-- ./tablet-desktop -->
@@ -50,19 +50,19 @@
     <div class="row info-mobile">
       <ul>
         <li>
-          <h1>{{vm.user.data.public_repos}}</h1>
-          <ng-pluralize count="vm.user.data.public_repos" when="vm.publicRepoForms"></ng-pluralize>
+          <h1>{{vm.user.public_repos}}</h1>
+          <ng-pluralize count="vm.user.public_repos" when="vm.publicRepoForms"></ng-pluralize>
         </li>
         <li>
-          <h1>{{vm.user.data.followers}}</h1>
-          <ng-pluralize count="vm.user.data.followers" when="vm.followerForms"></ng-pluralize>
+          <h1>{{vm.user.followers}}</h1>
+          <ng-pluralize count="vm.user.followers" when="vm.followerForms"></ng-pluralize>
         </li>
       </ul>
     </div>
 
     <div class="row text-center">
       <br>
-      <p><a href="{{vm.user.data.html_url}}" target="_blank">View on GitHub</a> <i class="glyphicon glyphicon-eye-open"></i></p>
+      <p><a href="{{vm.user.html_url}}" target="_blank">View on GitHub</a> <i class="glyphicon glyphicon-eye-open"></i></p>
       <br>
     </div>
     <hr>
@@ -74,12 +74,12 @@
 
       <ul>
         <li>
-          <h1>{{vm.user.data.public_repos}}</h1>
-          <ng-pluralize count="vm.user.data.public_repos" when="vm.publicRepoForms"></ng-pluralize>
+          <h1>{{vm.user.public_repos}}</h1>
+          <ng-pluralize count="vm.user.public_repos" when="vm.publicRepoForms"></ng-pluralize>
         </li>
         <li>
-          <h1>{{vm.user.data.followers}}</h1>
-          <ng-pluralize count="vm.user.data.followers" when="vm.followerForms"></ng-pluralize>
+          <h1>{{vm.user.followers}}</h1>
+          <ng-pluralize count="vm.user.followers" when="vm.followerForms"></ng-pluralize>
         </li>
       </ul>
 

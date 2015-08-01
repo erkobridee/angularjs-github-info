@@ -1,10 +1,10 @@
 <hr>
 
 <div>
-  <h3>Project Contributors ({{vm.contributors.data.length}})</h3>
+  <h3>Project Contributors ({{vm.contributors.length}})</h3>
 
   <ul class="contributors">
-      <li class="contributor" ng-repeat="contributor in vm.contributors.data">
+      <li class="contributor" ng-repeat="contributor in vm.contributors">
         <a
           class="avatar"
           ng-href="#/github/{{contributor.login}}/"
