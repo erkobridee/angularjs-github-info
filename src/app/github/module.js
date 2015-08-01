@@ -13,7 +13,9 @@ define(function(require) {
     // module dependencies
     [
       'ngResource',
-      'ngRoute'
+      'ngRoute',
+
+      require('app/commons/cacheManagement/package').name
     ]
   );
 

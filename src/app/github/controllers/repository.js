@@ -7,9 +7,15 @@ define(function(require) {
 
   //---
 
-  GitHubRepositoryCtrl.$inject = ['$routeParams', 'GithubResource', 'NavBarService', 'PluralizeService'];
+  GitHubRepositoryCtrl.$inject = [
+    '$routeParams', 'NavBarService', 'PluralizeService',
+    'GithubDataService'
+  ];
 
-  function GitHubRepositoryCtrl($routeParams, GithubResource, NavBarService, PluralizeService) {
+  function GitHubRepositoryCtrl(
+    $routeParams, NavBarService, PluralizeService,
+    dataService
+  ) {
 
     var userParam = $routeParams.user,
         repoParam = $routeParams.repo,
@@ -54,25 +60,28 @@ define(function(require) {
     }
 
     function loadData() {
+      var options = {
+        user: userParam,
+        repo: repoParam
+      };
 
       // RepositoryInfo
-      GithubResource.get({
-        'query': 'repos',
-        'user': userParam,
-        'repo': repoParam
-      }, function(res) {
-        vm.repoInfo = res;
-      });
+      dataService
+        .repository
+        .info
+        .get(options)
+        .then(function(data) {
+          vm.repoInfo = data;
+        });
 
       // RepositoryContributors
-      GithubResource.get({
-        'query': 'repos',
-        'user': userParam,
-        'repo': repoParam,
-        'spec': 'contributors'
-      }, function(res) {
-        vm.contributors = res;
-      });
+      dataService
+        .repository
+        .contributors
+        .get(options)
+        .then(function(data) {
+          vm.contributors = data;
+        });
 
     }
 

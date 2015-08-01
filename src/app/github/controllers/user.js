@@ -7,9 +7,15 @@ define(function(require) {
 
   //---
 
-  GitHubUserCtrl.$inject = ['$routeParams', 'GithubResource', 'NavBarService', 'PluralizeService'];
+  GitHubUserCtrl.$inject = [
+    '$routeParams', 'NavBarService', 'PluralizeService',
+    'GithubDataService'
+  ];
 
-  function GitHubUserCtrl($routeParams, GithubResource, NavBarService, PluralizeService) {
+  function GitHubUserCtrl(
+    $routeParams, NavBarService, PluralizeService,
+    dataService
+  ) {
 
     var userParam = $routeParams.user,
       urlPath = ['', 'github', userParam, ''].join('/');
@@ -47,7 +53,11 @@ define(function(require) {
     }
 
     function checkLength(value) {
-      if(typeof value !== 'undefined' && value.hasOwnProperty('length')) {
+      if(
+        value &&
+        typeof value !== 'undefined' &&
+        value.hasOwnProperty('length')
+      ) {
         return '(' + value.length + ')';
       } else {
         return '(0)';
@@ -55,30 +65,36 @@ define(function(require) {
     }
 
     function loadData() {
+      var options = {
+        user: userParam
+      };
 
       // UserInfo
-      GithubResource.get(
-        {user: userParam, repo: ''},
-        function(res) {
-          vm.user = res;
-        }
-      );
+      dataService
+        .user
+        .info
+        .get(options)
+        .then(function(data) {
+          vm.user = data;
+        });
 
       // UserRepositories
-      GithubResource.get(
-        {user: userParam},
-        function(res) {
-          vm.repos = res;
-        }
-      );
+      dataService
+        .user
+        .repositories
+        .get(options)
+        .then(function(data) {
+          vm.repos = data;
+        });
 
       // UserGists
-      GithubResource.get({
-        'user': userParam,
-        'repo': 'gists'
-      }, function(res) {
-        vm.gists = res;
-      });
+      dataService
+        .user
+        .gists
+        .get(options)
+        .then(function(data) {
+          vm.gists = data;
+        });
 
     }
 
