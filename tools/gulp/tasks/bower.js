@@ -35,12 +35,28 @@ module.exports = function(gulp, $) {
       .pipe(gulp.dest( $.config.paths.vendor + '/requirejs' ));
   });
 
+  gulp.task('bower:hashids', function() {
+    return gulp.src([
+      $.config.paths.bower + '/vendor/hashids/lib/*.min.js'
+    ])
+    .pipe(gulp.dest( $.config.paths.vendor + '/hashids' ));
+  });
+
+  gulp.task('bower:momentjs', function() {
+    return gulp.src([
+      $.config.paths.bower + '/vendor/moment/min/*.min.js'
+    ])
+    .pipe(gulp.dest( $.config.paths.vendor + '/moment' ));
+  });
+
   gulp.task('bower', ['bower:clean'], function(done) {
     $.runSequence([
       'bower:angular',
       'bower:bootstrap',
       'bower:jquery',
-      'bower:requirejs'
+      'bower:requirejs',
+      'bower:hashids',
+      'bower:momentjs'
     ], done);
   });
 

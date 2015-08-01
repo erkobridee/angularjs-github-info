@@ -17,6 +17,12 @@ require({
     ],
     angularRoute: [
       'vendor/angular-route/angular-route.min'
+    ],
+    moment: [
+      'vendor/moment/moment.min'
+    ],
+    hashids: [
+      'vendor/hashids/hashids.min'
     ]
 
   },
