@@ -1,4 +1,4 @@
-# AngularJS GitHub Info 
+# AngularJS GitHub Info
 
 [![Node Dependencies](https://david-dm.org/erkobridee/angularjs-github-info.png)](https://david-dm.org/erkobridee/angularjs-github-info) [![Node devDependencies](https://david-dm.org/erkobridee/angularjs-github-info/dev-status.png)](https://david-dm.org/erkobridee/angularjs-github-info#info=devDependencies)
 
@@ -16,7 +16,7 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 * **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.3.5
 
-* **Engine:** [AngularJS](http://angularjs.org/) v1.4.1 ( [Guide](http://docs.angularjs.org/guide/) )
+* **Engine:** [AngularJS](http://angularjs.org/) v1.4.3 ( [Guide](http://docs.angularjs.org/guide/) )
 
 * **Features:** List all public repositories, public gists and contributors repository from some GitHub user
 
@@ -46,7 +46,7 @@ $ npm install
 
 ### Gulp commands
 
-> If you want to know more about Gulp usage in this project, check [[GitHub] soudev / gulp-steps](https://github.com/soudev/gulp-steps). This project is based on step [04](https://github.com/soudev/gulp-steps/tree/master/04). 
+> If you want to know more about Gulp usage in this project, check [[GitHub] soudev / gulp-steps](https://github.com/soudev/gulp-steps). This project is based on step [04](https://github.com/soudev/gulp-steps/tree/master/04).
 
 * `gulp` - development mode, prepare files, watch changes and start server on port 1337
 
