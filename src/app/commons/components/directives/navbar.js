@@ -43,7 +43,7 @@ define(function(require) {
     //---
 
     function templateUrlFn(tElement, tAttrs) {
-      return 'app/components/templates/navbar.html';
+      return 'app/commons/components/templates/navbar.html';
     }
 
     //---

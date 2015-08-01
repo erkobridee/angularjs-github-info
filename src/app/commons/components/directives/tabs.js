@@ -61,7 +61,7 @@ define(function(require) {
     //---
 
     function templateUrlFn(tElement, tAttrs) {
-      return 'app/components/templates/tabs.html';
+      return 'app/commons/components/templates/tabs.html';
     }
 
     //---

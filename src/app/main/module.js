@@ -15,8 +15,8 @@ define(function(require) {
       'ngResource',
       'ngRoute',
 
+      require('app/commons/components/package').name,
       require('app/github/package').name,
-      require('app/components/package').name
     ]
   );
 

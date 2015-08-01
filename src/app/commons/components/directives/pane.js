@@ -37,7 +37,7 @@ define(function(require) {
     //---
 
     function templateUrlFn(tElement, tAttrs) {
-      return 'app/components/templates/pane.html';
+      return 'app/commons/components/templates/pane.html';
     }
 
     //---
