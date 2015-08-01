@@ -56,6 +56,7 @@ define(function(require) {
 
     function loadData() {
 
+      // UserInfo
       GithubResource.get(
         {user: userParam, repo: ''},
         function(res) {
@@ -63,6 +64,7 @@ define(function(require) {
         }
       );
 
+      // UserRepositories
       GithubResource.get(
         {user: userParam},
         function(res) {
@@ -70,6 +72,7 @@ define(function(require) {
         }
       );
 
+      // UserGists
       GithubResource.get({
         'user': userParam,
         'repo': 'gists'
