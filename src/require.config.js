@@ -47,6 +47,10 @@ require({
       deps: ['angular']
     },
 
+    'hashids': {
+      exports: 'hashids'
+    }
+
   },
 
   priority: [
