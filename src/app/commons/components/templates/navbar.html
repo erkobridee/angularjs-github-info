@@ -12,8 +12,18 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="{{vm.nav.searchNotActive}}active"><a ng-href="#{{vm.nav.searchUrlPath}}"><i class="icon-search icon-white"></i> Search</a></li>
-          <li class="{{vm.nav.aboutNotActive}}active"><a href="#/about"><i class="icon-question-sign icon-white"></i> About</a></li>
+        <li class="{{vm.nav.searchNotActive}}active">
+          <a
+            data-toggle="collapse"
+            data-target=".navbar-collapse.in"
+            ng-href="#{{vm.nav.searchUrlPath}}"><i class="icon-search icon-white"></i> Search</a>
+        </li>
+        <li class="{{vm.nav.aboutNotActive}}active">
+          <a
+            data-toggle="collapse"
+            data-target=".navbar-collapse.in"
+            href="#/about"><i class="icon-question-sign icon-white"></i> About</a>
+        </li>
       </ul>
 
       <!--
