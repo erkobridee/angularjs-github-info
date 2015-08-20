@@ -77,9 +77,9 @@ module.exports = (function() {
   var stylefilename = 'app';
 
   config.styles = {
-    less: {
-      main    : config.paths.src + '/less/' + stylefilename + '.less',
-      project : config.paths.src + '/{app,less,shared}/**/*.less'
+    sass: {
+      main    : config.paths.src + '/scss/' + stylefilename + '.scss',
+      project : config.paths.src + '/{app,scss}/**/*.scss'
     }
   };
 

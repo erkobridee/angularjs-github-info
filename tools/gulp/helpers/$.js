@@ -45,7 +45,6 @@ $.is = {
   debug   : !!$.args.debug,
   release : !!$.args.release,
   preview : !!$.args.preview,
-  less    : !!$.args.less,
   publish : !!$.args.publish,
   init    : !!$.args.init
 };

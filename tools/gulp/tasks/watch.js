@@ -17,7 +17,7 @@ module.exports = function(gulp, $) {
 
     // (less) stypes project
     gulp.watch([
-      $.config.styles.less.project
+      $.config.styles.sass.project
     ], ['wf:styles']);
 
   });

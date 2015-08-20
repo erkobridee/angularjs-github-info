@@ -32,15 +32,7 @@ module.exports = function(gulp, $) {
 
   gulp.task('lintspaces:styles', function() {
 
-    var source;
-
-    if( $.is.sass ) {
-      source = $.config.styles.sass.project;
-    } else {
-      source = $.config.styles.less.project;
-    }
-
-    return gulp.src( source )
+    return gulp.src( $.config.styles.sass.project )
       .pipe( lintspacesStream() );
 
   });
