@@ -24,7 +24,7 @@ streams.sass = function() {
     .pipe( $.sass().on('error', $.sass.logError) )
     .pipe( streams.autoprefix() )
     .pipe( $.injectString.prepend( $.config.banner ) )
-    .pipe( $.if( $.is.release, $.minifyCss() ) )
+    .pipe( $.if( ($.is.release || $.is.preview), $.minifyCss() ) )
     .pipe( gulp.dest( outputCssDir ) )
     .pipe( $.filter( '**.css' ) )
     .pipe( $.if( $.browserSync.active, $.reload({stream: true}) ) )
