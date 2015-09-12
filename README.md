@@ -32,6 +32,8 @@ $ git clone https://github.com/erkobridee/angularjs-github-info.git
 $ cd angularjs-github-info/
 $ npm install
 ```
+> pre install will execute `tools/scripts/setup.js`, that will check and install node global packages [`gulp`, `bower`]
+> if you are running on unix/mac machine, please run `sudo npm install`
 
 ### Prerequisites
 
