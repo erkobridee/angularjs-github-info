@@ -66,6 +66,6 @@
     "requirejs": "^2.1.20",
     "run-sequence": "^1.1.2",
     "through2": "^2.0.0",
-    "yargs": "^3.16.1"
+    "yargs": "^3.24.0"
   }
 }
