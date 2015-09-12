@@ -20,9 +20,12 @@ module.exports = function(gulp, $) {
 
       runTasks = runTasks.concat([ 'build' ]);
 
-      if( $.is.preview ) {
-        runTasks = runTasks.concat([ 'webserver:preview' ]);
-      }
+    } else if( $.is.preview ) {
+
+      runTasks = runTasks.concat([
+        'build',
+        'webserver:preview'
+      ]);
 
     } else {
 

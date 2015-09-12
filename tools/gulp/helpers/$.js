@@ -45,6 +45,7 @@ $.is = {
   debug   : !!$.args.debug,
   release : !!$.args.release,
   preview : !!$.args.preview,
+  proxy   : !!$.args.proxy,
   publish : !!$.args.publish,
   init    : !!$.args.init
 };
@@ -55,7 +56,7 @@ $.is = {
 (function() {
 
   $.config.paths.outputDir = (
-    $.is.release ?
+    ($.is.release || $.is.preview) ?
       $.config.paths.dist :
       $.config.paths.build
   );
@@ -75,6 +76,9 @@ $.is = {
     .webserver
     .port = parseInt($.args.port, 10) || $.config.webserver.port || 3000;
 
+  // do not configure proxy if proxy flag isn't present
+  if(!$.is.proxy) return;
+
   // middlewares array
   $.config
     .webserver
@@ -83,24 +87,17 @@ $.is = {
   //---
   // @begin: config proxies
   var proxyMiddleware = require('http-proxy-middleware'),
-      hasGulpTaskName = !!$.args._[0],
-      configProxyFlag = false;
-
-  if( $.is.release ) {
-    configProxyFlag = $.is.preview;
-  } else {
-    configProxyFlag = !hasGulpTaskName && !( $.is.publish || $.is.init );
-  }
+      hasGulpTaskName = !!$.args._[0];
 
   if( $.config.webserver.proxies ) {
     $.config
       .webserver
       .proxies.forEach(function(proxy) {
         if( !$.config.webserver.proxy ) $.config.webserver.proxy = proxy;
-        if( configProxyFlag ) configProxy( mountProxyOptions( proxy ) );
+        configProxy( mountProxyOptions( proxy ) );
       });
   } else if( $.config.webserver.proxy ) {
-    if( configProxyFlag ) configProxy( mountProxyOptions( $.config.webserver.proxy ) );
+    configProxy( mountProxyOptions( $.config.webserver.proxy ) );
   }
 
   function mountProxyOptions( proxy ) {
@@ -184,5 +181,7 @@ $.projectInfoMsg = function() {
 
     $.log('>> ' + msg);
     $.log('');
+  } else if( $.is.proxy ) {
+    $.log('>> running with proxy');
   }
 };
