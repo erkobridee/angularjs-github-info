@@ -32,8 +32,8 @@
   "devDependencies": {
     "browser-sync": "^2.9.3",
     "del": "^2.0.2",
-    "escodegen": "^1.6.1",
-    "esprima": "^2.5.0",
+    "escodegen": "^1.7.0",
+    "esprima": "^2.6.0",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.7.0",
     "gulp-autoprefixer": "^2.3.1",
