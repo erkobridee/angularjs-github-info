@@ -11,9 +11,13 @@
     "url": "https://github.com/erkobridee/angularjs-github-info.git"
   },
   "scripts": {
+    "outdated": "npm outdated --depth=0",
+    "localip": "node tools/scripts/localip",
+    "testos": "node tools/scripts/testos",
+    "setup": "node tools/scripts/setup",
+    "preinstall": "npm run setup",
     "postinstall": "gulp --init && bower install",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "outdated": "npm outdated --depth=0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "angularjs",
