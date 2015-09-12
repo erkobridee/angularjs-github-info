@@ -16,7 +16,7 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 * **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.3.5
 
-* **Engine:** [AngularJS](http://angularjs.org/) v1.4.3 ( [Guide](http://docs.angularjs.org/guide/) )
+* **Engine:** [AngularJS](http://angularjs.org/) v1.4.5 ( [Guide](http://docs.angularjs.org/guide/) )
 
 * **Features:** List all public repositories, public gists and contributors repository from some GitHub user
 
