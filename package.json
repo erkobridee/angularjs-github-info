@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.9.3",
-    "del": "^1.2.0",
+    "del": "^2.0.2",
     "escodegen": "^1.6.1",
     "esprima": "^2.5.0",
     "gulp": "^3.9.0",
