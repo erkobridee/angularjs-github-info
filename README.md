@@ -14,7 +14,7 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 ## Application
 
-* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.3.5
+* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.3.6
 
 * **Engine:** [AngularJS](http://angularjs.org/) v1.5.0 ( [Guide](http://docs.angularjs.org/guide/) )
 
