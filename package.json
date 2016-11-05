@@ -17,7 +17,10 @@
     "setup": "node tools/scripts/setup",
     "preinstall": "npm run setup",
     "postinstall": "gulp --init && bower install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp",
+    "preview": "gulp --preview",
+    "publish": "gulp --publish"
   },
   "keywords": [
     "angularjs",
