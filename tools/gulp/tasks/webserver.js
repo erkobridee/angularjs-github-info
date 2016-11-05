@@ -16,7 +16,7 @@ module.exports = function(gulp, $) {
       serverConfig.server.middleware = $.config.webserver.middlewares;
     }
 
-    $.browserSync( serverConfig );
+    $.browserSync.init( serverConfig );
 
   });
 

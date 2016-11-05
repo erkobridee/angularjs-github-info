@@ -20,7 +20,7 @@ $.del             = require('del');
 $.lazypipe        = require('lazypipe');
 $.runSequence     = require('run-sequence');
 
-$.browserSync     = require('browser-sync');
+$.browserSync     = require('browser-sync').create();
 $.reload          = $.browserSync.reload;
 
 $.open            = require('open');

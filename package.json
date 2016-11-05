@@ -33,7 +33,7 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.9.3",
+    "browser-sync": "^2.17.5",
     "del": "^2.0.2",
     "escodegen": "^1.7.0",
     "esprima": "^2.6.0",
