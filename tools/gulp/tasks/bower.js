@@ -37,7 +37,7 @@ module.exports = function(gulp, $) {
 
   gulp.task('bower:hashids', function() {
     return gulp.src([
-      $.config.paths.bower + '/vendor/hashids/lib/*.min.js'
+      $.config.paths.bower + '/vendor/hashids/dist/*.min.js'
     ])
     .pipe(gulp.dest( $.config.paths.vendor + '/hashids' ));
   });
