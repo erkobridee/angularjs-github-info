@@ -4,25 +4,25 @@ require({
   paths: {
 
     jquery: [
-      'vendor/jquery/jquery.min'
+      'libs/jquery/jquery.min'
     ],
     bootstrap: [
-      'vendor/bootstrap/js/bootstrap.min'
+      'libs/bootstrap/js/bootstrap.min'
     ],
     angular: [
-      'vendor/angular/angular.min'
+      'libs/angular/angular.min'
     ],
     angularResource: [
-      'vendor/angular-resource/angular-resource.min'
+      'libs/angular-resource/angular-resource.min'
     ],
     angularRoute: [
-      'vendor/angular-route/angular-route.min'
+      'libs/angular-route/angular-route.min'
     ],
     moment: [
-      'vendor/moment/moment.min'
+      'libs/moment/moment.min'
     ],
     hashids: [
-      'vendor/hashids/hashids.min'
+      'libs/hashids/hashids.min'
     ]
 
   },

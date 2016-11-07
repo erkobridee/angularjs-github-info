@@ -39,12 +39,14 @@ module.exports = (function() {
 
   //---
 
+  config.vendorsDirName = 'libs';
+
   config.paths = {
     src       : 'src',
     bower     : '.local/bower',
     repoDir   : '.local/' + config.git.branch,
     build     : '.temp',
-    vendor    : '.temp/vendor',
+    vendor    : '.temp/libs',
     dist      : 'dist'
   };
 

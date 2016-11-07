@@ -9,7 +9,7 @@ module.exports = function(gulp, $) {
     return gulp.src([
         $.config.paths.vendor + '/**/*'
       ])
-      .pipe( gulp.dest( $.config.paths.dist + '/vendor' ) );
+      .pipe( gulp.dest( $.config.paths.dist + '/' + $.config.vendorsDirName ) );
   });
 
   gulp.task('copy:dist2repo-dir', function() {
