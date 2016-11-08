@@ -14,9 +14,9 @@ View the app [AngularJS GitHub Info](http://erkobridee.github.io/angularjs-githu
 
 ## Application
 
-* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.3.6
+* **Interface:** [Twitter Bootstrap](http://twitter.github.com/bootstrap/) v3.3.7
 
-* **Engine:** [AngularJS](http://angularjs.org/) v1.5.0 ( [Guide](http://docs.angularjs.org/guide/) )
+* **Engine:** [AngularJS](http://angularjs.org/) v1.5.8 ( [Guide](http://docs.angularjs.org/guide/) )
 
 * **Features:** List all public repositories, public gists and contributors repository from some GitHub user
 
@@ -39,7 +39,7 @@ $ npm install
 
 * Must have [Git](http://git-scm.com/) installed
 
-* Must have [node.js (at least v0.10)](http://nodejs.org/) installed with npm (Node Package Manager)
+* Must have [node.js (at least v0.12)](http://nodejs.org/) installed with npm (Node Package Manager)
 
 * Must have [gulp](https://github.com/gulpjs/gulp) node package installed globally.  `[sudo] npm install -g gulp`
 
