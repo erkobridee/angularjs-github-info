@@ -13,10 +13,10 @@
     "jquery": "3.1.1",
     "requirejs": "2.3.2",
     "bootstrap": "3.3.7",
-    "angular": "~1.5.8",
-    "angular-resource": "~1.5.8",
-    "angular-route": "~1.5.8",
+    "angular": "~1.6.1",
+    "angular-resource": "~1.6.1",
+    "angular-route": "~1.6.1",
     "hashids": "~1.1.1",
-    "moment": "~2.15.2"
+    "moment": "~2.17.1"
   }
 }

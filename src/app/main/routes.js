@@ -7,9 +7,30 @@ define(function(require) {
 
   //--- https://docs.angularjs.org/api/ngRoute
 
-  configureRoutes.$inject = ['$routeProvider'];
+  configureRoutes.$inject = [
+    '$routeProvider',
+    '$locationProvider',
+    '$sceDelegateProvider'
+  ];
 
-  function configureRoutes($routeProvider) {
+  function configureRoutes(
+    $routeProvider,
+    $locationProvider,
+    $sceDelegateProvider
+  ) {
+
+    // remove the ! added by angular v1.6.1
+    $locationProvider.hashPrefix('');
+
+    // https://docs.angularjs.org/api/ng/service/$sce
+    // https://docs.angularjs.org/api/ng/provider/$sceDelegateProvider#resourceUrlWhitelist
+    $sceDelegateProvider.resourceUrlWhitelist([
+      // Allow same origin resource loads.
+      'self',
+
+      // Allow github api domain
+      'https://api.github.com/**'
+    ]);
 
     $routeProvider
       .when(

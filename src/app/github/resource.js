@@ -18,11 +18,16 @@ define(function(require) {
         'user': 'erkobridee',
         'repo': 'repos',
         'spec': '',
-        'callback': 'JSON_CALLBACK',
+        // this works until angular.js v1.5.x
+        // 'callback': 'JSON_CALLBACK',
         'per_page': 100
       }, {
         'get': {
-            'method': 'JSONP'
+            'method': 'JSONP',
+            'params': {
+              // needed since angular.js v1.6.x
+              'jsonpCallbackParam': 'cb'
+            }
         }
       }
     );
