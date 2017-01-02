@@ -48,6 +48,7 @@ module.exports = function(gulp, $) {
       .pipe( $.uglify() )
       .pipe( filter.restore )
       .pipe( $.concat( 'require.config.js' ) )
+      .pipe( $.uglify() )
       .pipe( gulp.dest( $.config.paths.dist ) );
   });
 
